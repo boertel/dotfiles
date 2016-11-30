@@ -76,7 +76,7 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing whitespace on save
 
-
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 autocmd FileType python setlocal colorcolumn=80
 hi ColorColumn ctermbg=lightgrey guibg=#3a3a3a
 hi Search guibg=peru guifg=wheat
