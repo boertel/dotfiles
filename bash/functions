@@ -1,0 +1,34 @@
+function mkpdir {
+    mkdir $1; touch $1/__init__.py
+}
+
+function todo () {
+    echo "- [ ] $1" >> TODO.md
+}
+
+# instead of doing a rm, just move the files to .Trash
+function rm () {
+    local path
+    for path in "$@"; do
+        # ignore any arguments
+        if [[ "$path" = -* ]]; then :
+        else
+            local dst=${path##*/}
+            # append the time if necessary
+            while [ -e ~/.Trash/"$dst" ]; do
+                dst="$dst "$(date +%H-%M-%S)
+            done
+            mv "$path" ~/.Trash/"$dst"
+        fi
+    done
+}
+
+function server {
+    if [[ "$2" == "-s" ]];then
+        python -m SimpleHTTPServer $1 > /dev/null 2>&1
+    else
+        python -m SimpleHTTPServer $1
+    fi
+}
+source /Users/ben/Code/vasy/vasy-function.sh
+source /Users/ben/Code/vasy/vasy-completion.sh

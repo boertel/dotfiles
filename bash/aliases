@@ -1,0 +1,51 @@
+alias ls='ls'
+alias ll='ls -l'
+alias l='ls'
+alias m='more'
+alias la='ls -a'
+alias lla='ls -la'
+alias rm='rm -i'
+alias utc='date -u'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias www='cd ~/Work/witwik-infra/ && eval "$(docker-machine env default)"'
+alias ww=witwik
+alias pm='witwik run api python manage.py'
+
+alias iwconfig='ifconfig en1'
+alias ieconfig='ifconfig en0'
+alias mac='ifconfig en0 | grep ether | cut -d " " -f 2'
+alias reload='source ~/.bash_profile'
+alias hour='echo -e "local:\t`date '+%H:%M:%S'`\nUTC:\t`date -u '+%H:%M:%S'`"'
+alias cleanvim='rm ~/.vim/backup/*;rm ~/.vim/tmp/*'
+alias hk=heroku
+
+alias gpo="git push origin"
+alias gfo="git fetch origin"
+alias gg="git grep"
+
+# alias for basic unix commands
+
+
+alias jsonify='python -mjson.tool'
+
+
+alias vi='nvim'
+alias v='gnvim'
+
+# databases
+# mysql
+alias mysql='/usr/local/mysql/bin/mysql'
+alias ghist='history | grep'
+alias ios='open -a iPhone\ Simulator'
+
+function sloc {
+    return eind $1 -name '$2' | xargs wc -l
+}
+
+function fb {
+    http GET "https://graph.facebook.com/$1?access_token=$2"
+}

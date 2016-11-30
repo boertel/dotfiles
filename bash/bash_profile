@@ -1,0 +1,55 @@
+for file in ~/.{functions,aliases,variables,prompt,vmware}; do
+    [ -r "$file" ] && [ -f "$file" ] && source $file
+done
+unset file
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export EDITOR=vi
+
+# Python
+export PYTHONSTARTUP=~/.pythonstartup
+
+# virtualenvwrapper
+export WORKON_HOME=~/.env/
+source /usr/local/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+
+source ~/.profile
+
+# git
+export GIT_MERGE_AUTOEDIT=no
+
+# history
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M "
+export HISTFILESIZE=2000
+
+# MySQL
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
+
+# PATH
+PATH=$PATH:/usr/local/mysql/bin
+PATH=$PATH:/usr/local/mongo/bin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/redis/bin
+PATH=$PATH:~/Code/bin
+PATH=$PATH:$HOME/Code/gocode/bin
+export PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+export GREP_OPTIONS='--color=auto'
+
+export NVM_DIR="/Users/ben/.nvm"
+export NVM_SYMLINK_CURRENT=false
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+source ~/Code/git-push-my-face/.env
+
+[[ -s "/Users/ben/.gvm/scripts/gvm" ]] && source "/Users/ben/.gvm/scripts/gvm"
+export ANDROID_HOME=~/Library/Android/sdk
+
+source ~/.git-completion
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

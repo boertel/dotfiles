@@ -1,0 +1,25 @@
+[include]
+    path = .gitconfig.local
+[core]
+	editor = /usr/bin/vim
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    grep = auto
+[color "status"]
+    untracked = cyan
+[alias]
+	st = status -s
+	ci = commit -m
+	diffc = diff --cached
+	dif = diff
+    br = branch
+	co = checkout
+    lgc = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t %s %C(yellow)%d%Creset' --abbrev-commit
+    lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t%s %C(yellow)%d%Creset' --abbrev-commit -n 5
+    compare = hub --pr
+[init]
+	templatedir = /Users/ben/.git-templates/
+[push]
+	default = current
