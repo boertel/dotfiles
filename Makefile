@@ -1,4 +1,5 @@
-install: install-nvim install-bash install-keybindings install-git
+install: install-nvim install-bash install-keybindings install-git \
+		install-fonts
 
 install-git:
 		rm -rf ~/.gitconfig ~/.git-templates
@@ -20,3 +21,6 @@ install-keybindings:
 		rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
 		mkdir -p ~/Library/KeyBindings
 		cp `pwd`/osx/DefaultKeyBinding.dict ~/Library/KeyBindings/DefaultKeyBinding.dict
+
+install-fonts:
+		cp `pwd`/fonts/* ~/Library/Fonts/
