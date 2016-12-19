@@ -22,6 +22,8 @@ syntax enable
 set visualbell
 set showcmd
 
+set iskeyword-=-
+
 set timeoutlen=1000 ttimeoutlen=10
 
 set splitright
