@@ -28,9 +28,12 @@ alias cleanvim='rm ~/.vim/backup/*;rm ~/.vim/tmp/*'
 alias hk=heroku
 alias ghist='history | grep'
 
+alias ngr='ngrok http -subdomain=boertel'
+
 alias gg="git grep"
 
 alias jsonify='python -mjson.tool'
+alias today='cal | grep --color -EC6 "\b$(date +%e | sed "s/ //g")"'
 
 
 alias vi='nvim'
