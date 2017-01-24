@@ -22,3 +22,6 @@
 [submodule "vim/pack/boertel/start/vim-jsx"]
 	path = vim/pack/boertel/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx
+[submodule "vim/pack/boertel/start/ale"]
+	path = vim/pack/boertel/start/ale
+	url = https://github.com/w0rp/ale
