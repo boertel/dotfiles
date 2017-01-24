@@ -1,3 +1,5 @@
+.DS_Store
+
 nvim/tmp/
 nvim/plugged/
 nvim/backup/
