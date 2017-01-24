@@ -1,4 +1,4 @@
-for file in ~/.{functions,aliases,variables,prompt,vmware}; do
+for file in ~/.{functions,aliases,variables,prompt,bash_private}; do
     [ -r "$file" ] && [ -f "$file" ] && source $file
 done
 unset file

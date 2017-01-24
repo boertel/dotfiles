@@ -13,8 +13,6 @@ let g:vim_json_syntax_conceal = 0
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
-let g:syntastic_check_on_wq = 0
-
 map <Leader>j !python -m json.tool
 
 colorscheme wombat
@@ -101,7 +99,15 @@ endif
 ab pdb import ipdb; ipdb.set_trace()
 ab dbg debugger;
 
+" vim-airline
 set laststatus=2
+let g:airline_theme='wombat'
 
+" ale
+let g:ale_linters = {
+            \'javascript': ['eslint'],
+            \'html': [],
+            \}
+let g:ale_sign_column_always = 1
 
 set secure
