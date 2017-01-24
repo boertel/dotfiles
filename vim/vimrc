@@ -6,20 +6,6 @@ filetype plugin indent on
 
 set shell=bash\ --login
 
-let g:pymode_folding = 0
-let g:pymode_virtualenv = 1
-
-let g:pymode_lint = 1
-let g:pymode_doc = 0
-let g:pymode_lint_on_write = 1
-let g:pymode_lint_on_fly = 0
-let g:pymode_lint_checkers = ['pyflakes']
-let g:pymode_lint_cwindow = 0
-let g:pymode_lint_signs = 1
-
-let g:pymode_rope_goto_definition_cmd = 'vnew'
-let g:pymode_rope_complete_on_dot = 0
-
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_eager = 0
 
@@ -102,7 +88,6 @@ set number
 " autocmd InsertEnter * :set number
 "autocmd InsertLeave * :set relativenumber
 
-
 if has("gui_running")
     set guifont=M+_1m_light:h16
     " python line length
@@ -110,32 +95,13 @@ if has("gui_running")
     hi ColorColumn ctermbg=lightgrey guibg=#474747
     hi Search guibg=peru guifg=wheat
 
-    highlight SyntasticWarningSign guifg=white guibg=#dd5f1c
-    highlight SyntasticStyleWarningSign guifg=white guibg=#dd5f1c
-    highlight SyntasticStyleErrorSign guifg=white guibg=#dd5f1c
-    highlight link Flake8_Error SyntasticStyleErrorSign
-    highlight link Flake8_Warning SyntasticWarningSign
-
-    "let g:syntastic_error_symbol = "✗"
-    "let g:syntastic_warning_symbol = "⚠"
-    "let g:syntastic_style_error_symbol = "⚠"
-    "let g:syntastic_warning_symbol = "⚠"
-
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
 
 ab pdb import ipdb; ipdb.set_trace()
 ab dbg debugger;
-ab caravel import pdb; pdb.set_trace()
-iab rcc 
-\import React from 'react';
-\<CR>
-\<CR>
-\<CR>export default class  extends React.Component {
-\<CR>render () {
-\<CR>return ();
-\<CR>}
-\<CR>}
+
+set laststatus=2
 
 
 set secure
