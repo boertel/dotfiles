@@ -36,8 +36,14 @@ alias jsonify='python -mjson.tool'
 alias today='cal | grep --color -EC6 "\b$(date +%e | sed "s/ //g")"'
 
 
-alias vi='nvim'
-alias v='gnvim'
+VIM="vim"
+if [[ "$VIM" == "vim" ]]; then
+    alias vi='vim'
+    alias v='mvim'
+else
+    alias vi='nvim'
+    alias v='gnvim'
+fi
 
 # databases
 # mysql
