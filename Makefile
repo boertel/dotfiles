@@ -17,6 +17,11 @@ install-nvim:
 		rm -rf ~/.config/nvim
 		ln -s `pwd`/nvim ~/.config/nvim
 
+install-vim:
+	rm -rf ~/.vim ~/.vimrc
+	ln -s `pwd`/vim ~/.vim
+	ln -s `pwd`/vim/vimrc ~/.vimrc
+
 install-keybindings:
 		rm -f ~/Library/KeyBindings/DefaultKeyBinding.dict
 		mkdir -p ~/Library/KeyBindings

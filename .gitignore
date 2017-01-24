@@ -2,3 +2,6 @@ nvim/tmp/
 nvim/plugged/
 nvim/backup/
 nvim/.netrwhist
+
+vim/backup
+vim/tmp

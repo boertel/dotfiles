@@ -13,3 +13,5 @@ brew tap boertel/tap
 
 brew install bump
 brew install vasy
+
+brew install vim --override-system-vim

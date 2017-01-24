@@ -1,0 +1,141 @@
+set nocompatible
+filetype off
+
+
+filetype plugin indent on
+
+set shell=bash\ --login
+
+let g:pymode_folding = 0
+let g:pymode_virtualenv = 1
+
+let g:pymode_lint = 1
+let g:pymode_doc = 0
+let g:pymode_lint_on_write = 1
+let g:pymode_lint_on_fly = 0
+let g:pymode_lint_checkers = ['pyflakes']
+let g:pymode_lint_cwindow = 0
+let g:pymode_lint_signs = 1
+
+let g:pymode_rope_goto_definition_cmd = 'vnew'
+let g:pymode_rope_complete_on_dot = 0
+
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_eager = 0
+
+let g:vim_json_syntax_conceal = 0
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+let g:syntastic_check_on_wq = 0
+
+map <Leader>j !python -m json.tool
+
+colorscheme wombat
+set go-=T
+
+set splitright
+
+set visualbell
+syntax on
+set ruler
+set showcmd
+
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+set nobackup
+set nowritebackup
+
+set timeoutlen=1000 ttimeoutlen=10
+
+set tabstop=4
+set autoindent
+set shiftwidth=4
+set expandtab
+
+set backspace=indent,eol,start  " backspace through everything in insert mode
+
+let g:netrw_list_hide='\.pyc$,\.DS_Store$'
+set wildignore=*.pyc
+
+" disable middle click
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+
+inoremap <C-space> <C-x><C-o>
+imap <C-z> <C-y>,
+
+" search results in the middle of the screen
+nnoremap <silent> n nzz
+nnoremap <silent> N Nzz
+nnoremap <silent> * *zz
+nnoremap <silent> # #zz
+
+" disable arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+let mapleader = ","
+cnoreabbrev W w
+
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+
+
+" highlight and clean up whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
+
+autocmd BufNewFile,BufRead *.less set filetype=less
+autocmd BufNewFile,BufRead *.json set filetype=javascript
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" show line number and relative line number on command mode
+set relativenumber
+set number
+" autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
+
+
+if has("gui_running")
+    set guifont=M+_1m_light:h16
+    " python line length
+    autocmd FileType python,javascript setlocal colorcolumn=80
+    hi ColorColumn ctermbg=lightgrey guibg=#474747
+    hi Search guibg=peru guifg=wheat
+
+    highlight SyntasticWarningSign guifg=white guibg=#dd5f1c
+    highlight SyntasticStyleWarningSign guifg=white guibg=#dd5f1c
+    highlight SyntasticStyleErrorSign guifg=white guibg=#dd5f1c
+    highlight link Flake8_Error SyntasticStyleErrorSign
+    highlight link Flake8_Warning SyntasticWarningSign
+
+    "let g:syntastic_error_symbol = "✗"
+    "let g:syntastic_warning_symbol = "⚠"
+    "let g:syntastic_style_error_symbol = "⚠"
+    "let g:syntastic_warning_symbol = "⚠"
+
+    highlight SpellBad term=underline gui=undercurl guisp=Orange
+endif
+
+ab pdb import ipdb; ipdb.set_trace()
+ab dbg debugger;
+ab caravel import pdb; pdb.set_trace()
+iab rcc 
+\import React from 'react';
+\<CR>
+\<CR>
+\<CR>export default class  extends React.Component {
+\<CR>render () {
+\<CR>return ();
+\<CR>}
+\<CR>}
+
+
+set secure
