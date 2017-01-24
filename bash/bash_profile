@@ -24,6 +24,7 @@ export GIT_MERGE_AUTOEDIT=no
 # history
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M "
 export HISTFILESIZE=2000
+export HISTCONTROL=ignoreboth:erasedups
 
 # MySQL
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
