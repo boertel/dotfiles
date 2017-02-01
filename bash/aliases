@@ -48,7 +48,7 @@ fi
 # databases
 # mysql
 alias mysql='/usr/local/mysql/bin/mysql'
-alias ios='open -a iPhone\ Simulator'
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
 function sloc {
     return eind $1 -name '$2' | xargs wc -l

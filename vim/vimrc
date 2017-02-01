@@ -96,7 +96,7 @@ if has("gui_running")
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
 
-ab pdb import ipdb; ipdb.set_trace()
+ab pdb import pdb; pdb.set_trace()
 ab dbg debugger;
 
 " vim-airline
@@ -109,7 +109,7 @@ let g:ale_lint_on_text_changed = 0
 let g:ale_sign_column_always = 1
 let g:ale_linters = {
             \'javascript': ['eslint'],
-            \'python': ['flake8'],
+            \'python': [],
             \'html': [],
             \}
 
