@@ -1,0 +1,32 @@
+#!/bin/bash
+
+if [[ $# == 0 ]]; then
+    echo "usage: vimpack action [..args]"
+    echo "supported actions:"
+    echo "  add user_name/repo_name"
+    echo "  rm  repo_name"
+    exit 1
+fi
+
+
+GITROOT=$(git root)
+PACK_PATH=$GITROOT/vim/pack/boertel/start
+
+ACTION=$1
+
+
+if [[ "$ACTION" == "add" ]]; then
+    REPO=$2
+    USER_NAME=$(echo $REPO | cut -d "/" -f 1)
+    REPO_NAME=$(echo $REPO | cut -d "/" -f 2-)
+    git submodule add git@github.com:$REPO $PACK_PATH/$REPO_NAME
+fi
+
+
+if [[ "$ACTION" == "rm" ]]; then
+    REPO_NAME=$2
+    REPO_PATH=$PACK_PATH/$REPO_NAME
+    git submodule deinit $REPO_PATH
+    git rm $REPO_PATH
+    rm -Rf $GITROOT/.git/modules/$REPO_PATH
+fi
