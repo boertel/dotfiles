@@ -30,5 +30,6 @@ function server {
         python -m SimpleHTTPServer $1
     fi
 }
-source /Users/ben/Code/vasy/vasy-function.sh
-source /Users/ben/Code/vasy/vasy-completion.sh
+
+[[ -s "$HOME/Code/vasy/vasy-function.sh" ]] && source $HOME/Code/vasy/vasy-function.sh
+[[ -s "$HOME/Code/vasy/vasy-completion.sh" ]] && source $HOME/Code/vasy/vasy-completion.sh
