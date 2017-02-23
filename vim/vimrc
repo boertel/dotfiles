@@ -64,6 +64,7 @@ map <right> <nop>
 
 let mapleader = ","
 cnoreabbrev W w
+cnoreabbrev vpslit vsplit
 
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -108,6 +109,14 @@ let g:airline_theme='wombat'
 let g:ale_lint_on_save = 1
 let g:ale_lint_on_text_changed = 0
 let g:ale_sign_column_always = 1
+
+highlight ALEErrorSign ctermfg=124 guibg=#970A0F
+highlight ALEWarningSign ctermfg=31 guibg=#FFE161 guifg=#E5786D
+
+" Custom linting symbols
+let g:ale_sign_error = '·'
+let g:ale_sign_warning = '·'
+
 let g:ale_linters = {
             \'javascript': ['eslint'],
             \'python': ['flake8'],
