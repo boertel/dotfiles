@@ -5,6 +5,4 @@ nvim/plugged/
 nvim/backup/
 nvim/.netrwhist
 
-vim/backup
-vim/tmp
 vim/.netrwhist
