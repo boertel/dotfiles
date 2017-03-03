@@ -1,7 +1,7 @@
 # configure prompt
 # Get the name of the current git branch and if there is some uncommit changes to it.
 function parse_git_dirty {
-	[[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
+	[[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
 }
 function parse_git_branch {
 	git branch --no-color 2> /dev/null \
