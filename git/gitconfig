@@ -19,7 +19,5 @@
     lgc = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t %s %C(yellow)%d%Creset' --abbrev-commit
     lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t%s %C(yellow)%d%Creset' --abbrev-commit -n 5
     compare = hub --pr
-[init]
-    templatedir = /Users/ben/.git-templates/
 [push]
     default = current
