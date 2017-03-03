@@ -64,6 +64,7 @@ map <right> <nop>
 
 let mapleader = ","
 cnoreabbrev W w
+cnoreabbrev Wq wq
 cnoreabbrev vpslit vsplit
 
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
