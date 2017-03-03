@@ -1,15 +1,17 @@
 brew update
 brew upgrade
 
-brew install neovim/neovim/neovim
-
-brew tap neovim/neovim
-brew tap rogual/neovim-dot-app
-brew install neovim-dot-app
-brew linkapps neovim-dot-app
-
 brew tap caskroom/cask
 brew tap boertel/tap
+
+brew cask install macvim
+brew cask install slack
+brew cask install wmail
+brew cask install spectacle
+brew cask install flux
+brew cask install spotify
+brew cask install google-chrome
+brew cask install firefox
 
 brew install bump
 brew install vasy

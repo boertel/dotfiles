@@ -12,11 +12,11 @@ export PYTHONSTARTUP=~/.pythonstartup
 
 # virtualenvwrapper
 export WORKON_HOME=~/.env/
-source /usr/local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+[[ -s "/usr/local/bin/virtualenvwrapper.sh" ]] && source /usr/local/bin/virtualenvwrapper.sh
 
-source ~/.profile
+[[ -s "~/.profile" ]] && source ~/.profile
 
 # git
 export GIT_MERGE_AUTOEDIT=no
@@ -42,15 +42,15 @@ export PATH
 export PATH="/usr/local/heroku/bin:$PATH"
 export GREP_OPTIONS='--color=auto'
 
-export NVM_DIR="/Users/ben/.nvm"
+export NVM_DIR="$HOME/.nvm"
 export NVM_SYMLINK_CURRENT=false
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source ~/Code/git-push-my-face/.env
 
-[[ -s "/Users/ben/.gvm/scripts/gvm" ]] && source "/Users/ben/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export ANDROID_HOME=~/Library/Android/sdk
 
-source ~/.git-completion
+[[ -s "$HOME/Code/git-push-my-face/.env" ]] && source ~/Code/git-push-my-face/.env
+[[ -s "$HOME/.git-completion" ]] && source ~/.git-completion
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
