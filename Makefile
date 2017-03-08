@@ -30,3 +30,8 @@ install-keybindings:
 
 install-fonts:
 	cp `pwd`/fonts/* ~/Library/Fonts/
+
+install-homebrew:
+	./homebrew/brew.sh
+	./homebrew/cask.sh
+
