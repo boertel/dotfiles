@@ -34,6 +34,6 @@
 [submodule "vim/pack/boertel/start/vim-python-pep8-indent"]
 	path = vim/pack/boertel/start/vim-python-pep8-indent
 	url = git@github.com:Vimjas/vim-python-pep8-indent
-[submodule "/Users/oerbe01/Code/dotfiles/vim/pack/boertel/start/vim-abolish"]
-	path = /Users/oerbe01/Code/dotfiles/vim/pack/boertel/start/vim-abolish
+[submodule "vim/pack/boertel/start/vim-abolish"]
+	path = vim/pack/boertel/start/vim-abolish
 	url = git@github.com:tpope/vim-abolish

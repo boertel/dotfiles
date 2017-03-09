@@ -12,7 +12,7 @@ fi
 
 
 GITROOT=$(git root)
-PACK_PATH=$GITROOT/vim/pack/boertel/start
+PACK_PATH=vim/pack/boertel/start
 
 ACTION=$1
 
@@ -21,7 +21,7 @@ if [[ "$ACTION" == "add" ]]; then
     REPO=$2
     USER_NAME=$(echo $REPO | cut -d "/" -f 1)
     REPO_NAME=$(echo $REPO | cut -d "/" -f 2-)
-    git submodule add git@github.com:$REPO $PACK_PATH/$REPO_NAME
+    cd $GITROOT && git submodule add git@github.com:$REPO $PACK_PATH/$REPO_NAME
 fi
 
 
@@ -34,7 +34,7 @@ if [[ "$ACTION" == "rm" ]]; then
 fi
 
 if [[ "$ACTION" == "update" ]]; then
-    cd $PACK_PATH/$REPO_NAME && git pull
+    cd $GITROOT/$PACK_PATH/$REPO_NAME && git pull
 fi
 
 if [[ "$ACTION" == "init" ]]; then
