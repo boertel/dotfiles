@@ -95,10 +95,13 @@ if has("gui_running")
     " python line length
     autocmd FileType python,javascript setlocal colorcolumn=80
     hi ColorColumn ctermbg=lightgrey guibg=#474747
-    hi Search guibg=peru guifg=wheat
 
     highlight SpellBad term=underline gui=undercurl guisp=Orange
 endif
+
+hi Search guibg=#85C6EC guifg=#FFFFFF
+set hlsearch
+nnoremap <esc><esc> :silent! nohls<cr>
 
 ab pdb import pdb; pdb.set_trace()
 ab dbg debugger;
