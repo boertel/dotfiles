@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>1DEBD8F8-460F-4653-BE84-E1BC27E5E4E8</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>ub</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Urbran Dictionary</string>
+			<key>url</key>
+			<string>http://www.urbandictionary.com/define.php?term={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>B990C9C2-CFD7-4116-B14F-7643951DF43B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>wre</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>WordReference EN-FR</string>
+			<key>url</key>
+			<string>http://www.wordreference.com/enfr/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>D45CE8D8-8A75-4277-9A0E-6CED52EEA07B</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>wrf</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>WordReference FR-EN</string>
+			<key>url</key>
+			<string>http://www.wordreference.com/fren/{query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>E9BBB113-2CEA-4A76-AE98-979415435EE0</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>tz</string>
+			<key>plusSpaces</key>
+			<false/>
+			<key>text</key>
+			<string>Torrentz</string>
+			<key>url</key>
+			<string>http://torrentz2.eu/search?f={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>

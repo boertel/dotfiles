@@ -1,0 +1,9 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "<!DOCTYPE HTML>\n<html lang=\"en\">\n<head>\n\t<meta charset=\"UTF-8\">\n\t<title><\/title>\n<\/head>\n<body>\n\n<script type=\"text\/javascript\" charset=\"utf-8\">\nvar _ptq = _ptq || [];\nvar _punchtab_settings = {\n    key: \"ef256e0242a3448d8986b57e559c3cc8\",\n    display: \"tab\"\n};\n\n(function() {\n    var pt = document.createElement('script'); pt.type = 'text\/javascript'; pt.async = true;\n    pt.src = ('https:' == document.location.protocol ? 'https:\/\/' : 'http:\/\/') + 'test.punchtab.com:8000\/static\/js\/pt.js';\n    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pt, s);\n})();\n\nwindow.ptReady = window.ptReady || [];\nwindow.ptReady.push(function () {\n});\n\n<\/script>\n\n<\/body>\n<\/html>\n",
+    "dontautoexpand" : true,
+    "uid" : "008E24F6-03EA-4705-813D-97C6E66039FF",
+    "name" : "html",
+    "keyword" : "html"
+  }
+}
