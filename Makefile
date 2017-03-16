@@ -35,3 +35,6 @@ install-homebrew:
 	./homebrew/brew.sh
 	./homebrew/cask.sh
 
+install-osx:
+	rm -rf ~/Library/Preferences/org.herf.Flux.plist
+	ln -s `pwd`/osx/flux/org.herf.Flux.plist ~/Library/Preferences/org.herf.Flux.plist
