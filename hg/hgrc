@@ -1,0 +1,21 @@
+[ui]
+ignore = ~/.hgignore
+editor=vi
+
+[pager]
+pager = LESS='FRX' less
+
+[color]
+status.modified = magenta
+status.added = green
+status.removed = red
+status.deleted = cyan
+status.unknown = yellow
+status.ignored = black
+
+[extensions]
+shelve=
+color=
+pager=
+rebase=
+strip=

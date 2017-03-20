@@ -6,6 +6,11 @@ install-git:
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 	ln -s `pwd`/git/git-templates ~/.git-templates
 
+install-hg:
+	rm -rf ~/.hgrc ~/.hgignore
+	ln -s `pwd`/hg/hgrc ~/.hgrc
+	ln -s `pwd`/hg/hgignore ~/.hgignore
+
 install-bash:
 	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt
 	ln -s `pwd`/bash/bash_profile ~/.bash_profile
