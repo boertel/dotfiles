@@ -34,6 +34,7 @@ if [[ "$ACTION" == "rm" ]]; then
 fi
 
 if [[ "$ACTION" == "update" ]]; then
+    REPO_NAME=$2
     cd $GITROOT/$PACK_PATH/$REPO_NAME && git pull
 fi
 

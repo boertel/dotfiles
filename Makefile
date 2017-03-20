@@ -18,6 +18,10 @@ install-bash:
 	ln -s `pwd`/bash/functions ~/.functions
 	ln -s `pwd`/bash/prompt ~/.prompt
 
+install-bash-extra:
+	rm -rf ~/.ackrc
+	ln -s `pwd`/bash/ackrc ~/.ackrc
+
 install-nvim:
 	rm -rf ~/.config/nvim
 	mkdir -p ~/.config/nvim
