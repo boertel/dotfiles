@@ -6,12 +6,21 @@ install-git:
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 	ln -s `pwd`/git/git-templates ~/.git-templates
 
+install-hg:
+	rm -rf ~/.hgrc ~/.hgignore
+	ln -s `pwd`/hg/hgrc ~/.hgrc
+	ln -s `pwd`/hg/hgignore ~/.hgignore
+
 install-bash:
 	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt
 	ln -s `pwd`/bash/bash_profile ~/.bash_profile
 	ln -s `pwd`/bash/aliases ~/.aliases
 	ln -s `pwd`/bash/functions ~/.functions
 	ln -s `pwd`/bash/prompt ~/.prompt
+
+install-bash-extra:
+	rm -rf ~/.ackrc
+	ln -s `pwd`/bash/ackrc ~/.ackrc
 
 install-nvim:
 	rm -rf ~/.config/nvim

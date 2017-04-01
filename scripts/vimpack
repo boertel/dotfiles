@@ -6,6 +6,7 @@ if [[ $# == 0 ]]; then
     echo "  add     user_name/repo_name"
     echo "  rm      repo_name"
     echo "  update  repo_name"
+    echo "  ls      repo_name"
     echo "  init"
     exit 1
 fi
@@ -34,10 +35,16 @@ if [[ "$ACTION" == "rm" ]]; then
 fi
 
 if [[ "$ACTION" == "update" ]]; then
+    REPO_NAME=$2
     cd $GITROOT/$PACK_PATH/$REPO_NAME && git pull
 fi
 
 if [[ "$ACTION" == "init" ]]; then
     git submodule init
     git submodule update
+fi
+
+if [[ "$ACTION" == "ls" ]]; then
+    REPO_NAME=$2
+    ls $GITROOT/$PACK_PATH/$REPO_NAME
 fi

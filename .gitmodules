@@ -40,3 +40,6 @@
 [submodule "vim/pack/boertel/start/ack.vim"]
 	path = vim/pack/boertel/start/ack.vim
 	url = git@github.com:mileszs/ack.vim
+[submodule "vim/pack/boertel/start/vim-es6"]
+	path = vim/pack/boertel/start/vim-es6
+	url = git@github.com:isRuslan/vim-es6
