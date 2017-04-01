@@ -37,3 +37,6 @@
 [submodule "vim/pack/boertel/start/vim-abolish"]
 	path = vim/pack/boertel/start/vim-abolish
 	url = git@github.com:tpope/vim-abolish
+[submodule "vim/pack/boertel/start/ack.vim"]
+	path = vim/pack/boertel/start/ack.vim
+	url = git@github.com:mileszs/ack.vim
