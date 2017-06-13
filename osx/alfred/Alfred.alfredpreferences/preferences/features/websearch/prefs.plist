@@ -22,11 +22,9 @@
 		<key>B990C9C2-CFD7-4116-B14F-7643951DF43B</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>wre</string>
-			<key>plusSpaces</key>
-			<false/>
 			<key>text</key>
 			<string>WordReference EN-FR</string>
 			<key>url</key>
@@ -37,11 +35,9 @@
 		<key>D45CE8D8-8A75-4277-9A0E-6CED52EEA07B</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>wrf</string>
-			<key>plusSpaces</key>
-			<false/>
 			<key>text</key>
 			<string>WordReference FR-EN</string>
 			<key>url</key>
