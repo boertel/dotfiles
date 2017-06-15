@@ -38,7 +38,13 @@ set autoindent
 set shiftwidth=4
 set expandtab
 
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 set backspace=indent,eol,start  " backspace through everything in insert mode
+set iskeyword-=-
 
 let g:netrw_list_hide='\.pyc$,\.DS_Store$'
 set wildignore=*.pyc
@@ -84,6 +90,10 @@ autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
+autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --tab-width=4
+" Use formatprg when available
+let g:neoformat_try_formatprg = 1
+
 " show line number and relative line number on command mode
 set relativenumber
 set number
@@ -127,5 +137,12 @@ let g:ale_linters = {
             \'python': ['flake8'],
             \'html': [],
             \}
+
+" python-mode
+" let ale do its job
+let g:pymode_lint = 0
+let g:pymode_rope_goto_definition_cmd = 'vnew'
+" prevent to open the preview window on autocomplete
+set completeopt=menu
 
 set secure

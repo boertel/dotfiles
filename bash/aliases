@@ -12,10 +12,10 @@ alias ...='cd ../..'
 
 alias www='cd ~/Work/witwik-infra/ && eval "$(docker-machine env default)"'
 alias ww=witwik
-#alias pm='witwik run api python manage.py'
 
 # Django
 alias pm='python manage.py'
+alias ptest='pm test'
 alias prs='pm runserver'
 alias prsp='pm runserver_plus'
 
