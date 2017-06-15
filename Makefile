@@ -5,6 +5,7 @@ install-git:
 	rm -rf ~/.gitconfig ~/.git-templates
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
 	ln -s `pwd`/git/git-templates ~/.git-templates
+	./scripts/install-git-completion
 
 install-hg:
 	rm -rf ~/.hgrc ~/.hgignore
