@@ -59,3 +59,7 @@ function sloc {
 function fb {
     http GET "https://graph.facebook.com/$1?access_token=$2"
 }
+
+function showicons {
+    defaults write com.apple.finder CreateDesktop $1 && killall Finder
+}
