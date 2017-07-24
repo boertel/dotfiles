@@ -49,3 +49,6 @@
 [submodule "vim/pack/boertel/start/neoformat"]
 	path = vim/pack/boertel/start/neoformat
 	url = git@github.com:sbdchd/neoformat
+[submodule "vim/pack/boertel/start/vim-json"]
+	path = vim/pack/boertel/start/vim-json
+	url = git@github.com:elzr/vim-json
