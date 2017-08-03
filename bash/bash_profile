@@ -33,6 +33,7 @@ export DYLD_LIBRARY_PATH=/usr/local/mysql/lib/:$DYLD_LIBRARY_PATH
 PATH=$PATH:/usr/local/mysql/bin
 PATH=$PATH:/usr/local/mongo/bin
 PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/redis/bin
 PATH=$PATH:~/Code/bin
 PATH=$PATH:$HOME/Code/gocode/bin
