@@ -22,6 +22,7 @@ set go-=T
 set splitright
 
 set visualbell
+set t_vb=
 syntax on
 set ruler
 set showcmd
@@ -44,7 +45,7 @@ set nofoldenable
 set foldlevel=2
 
 set backspace=indent,eol,start  " backspace through everything in insert mode
-set iskeyword-=-
+"set iskeyword-=-
 
 let g:netrw_list_hide='\.pyc$,\.DS_Store$,__pycache__/$,\.ropeproject/$'
 set wildignore=*.pyc
@@ -90,7 +91,6 @@ autocmd BufNewFile,BufRead *.less set filetype=less
 autocmd BufNewFile,BufRead *.json set filetype=javascript
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
-autocmd FileType javascript setlocal formatprg=prettier\ --stdin\ --tab-width=4
 " Use formatprg when available
 let g:neoformat_try_formatprg = 1
 
@@ -114,6 +114,7 @@ set hlsearch
 nnoremap <esc><esc> :silent! nohls<cr>
 
 ab pdb import pdb; pdb.set_trace()
+ab clog console.log(
 ab dbg debugger;
 
 " vim-airline
@@ -137,6 +138,10 @@ let g:ale_linters = {
             \'python': ['flake8'],
             \'html': [],
             \}
+
+" Prettier options to match default ones
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
 
 " python-mode
 " let ale do its job

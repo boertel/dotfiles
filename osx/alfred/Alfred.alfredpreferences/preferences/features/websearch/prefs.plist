@@ -7,11 +7,9 @@
 		<key>1DEBD8F8-460F-4653-BE84-E1BC27E5E4E8</key>
 		<dict>
 			<key>enabled</key>
-			<true/>
+			<false/>
 			<key>keyword</key>
 			<string>ub</string>
-			<key>plusSpaces</key>
-			<false/>
 			<key>text</key>
 			<string>Urbran Dictionary</string>
 			<key>url</key>

@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "  shouldComponentUpdate(nextProps, nextState) {\n    for(var key in nextProps) { if (nextProps[key] !== this.props[key]) { console.log(this.constructor.name, 'props', key, this.props[key], nextProps[key]); } }\n    if (this.state) {\n      for(var key in nextState) { if (nextState[key] !== this.state[key]) { console.log(this.constructor.name, 'state', key, this.state[key], nextState[key]); } }\n    }\n    return true\n  }",
+    "uid" : "4D54683B-6FD5-4CB4-90BF-BFC0C6C1CFB8",
+    "name" : "shouldComponentUpdate",
+    "keyword" : "scu"
+  }
+}

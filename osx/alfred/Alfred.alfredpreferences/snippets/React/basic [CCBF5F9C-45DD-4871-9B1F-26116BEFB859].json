@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "import React, { Component } from 'react';\n\nclass CreateDealPage extends Component {\n  constructor(props) {\n    super(props);\n  }\n  render() {\n    return <div \/>;\n  }\n}\n\nexport default CreateDealPage;",
+    "uid" : "CCBF5F9C-45DD-4871-9B1F-26116BEFB859",
+    "name" : "basic",
+    "keyword" : "basic"
+  }
+}

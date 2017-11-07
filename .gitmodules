@@ -52,3 +52,12 @@
 [submodule "vim/pack/boertel/start/vim-json"]
 	path = vim/pack/boertel/start/vim-json
 	url = git@github.com:elzr/vim-json
+[submodule "vim/pack/boertel/start/vim-stylus.git"]
+	path = vim/pack/boertel/start/vim-stylus.git
+	url = git@github.com:wavded/vim-stylus.git
+[submodule "vim/pack/boertel/start/vim-prettier"]
+	path = vim/pack/boertel/start/vim-prettier
+	url = git@github.com:prettier/vim-prettier
+[submodule "vim/pack/boertel/start/vim-commentary.git"]
+	path = vim/pack/boertel/start/vim-commentary.git
+	url = git@github.com:tpope/vim-commentary.git
