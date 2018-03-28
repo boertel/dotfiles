@@ -34,6 +34,7 @@ alias gg="git grep"
 alias gd="git diff"
 alias gs="git st"
 
+
 alias jsonify='python -mjson.tool'
 alias today='cal | grep --color -EC6 "\b$(date +%e | sed "s/ //g")"'
 

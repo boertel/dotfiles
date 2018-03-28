@@ -31,5 +31,9 @@ function server {
     fi
 }
 
+function gmatch {
+    mvim +/"$1" -p $(git grep -l "$1")
+}
+
 [[ -s "$HOME/Code/vasy/vasy-function.sh" ]] && source $HOME/Code/vasy/vasy-function.sh
 [[ -s "$HOME/Code/vasy/vasy-completion.sh" ]] && source $HOME/Code/vasy/vasy-completion.sh

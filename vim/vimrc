@@ -45,7 +45,7 @@ set nofoldenable
 set foldlevel=2
 
 set backspace=indent,eol,start  " backspace through everything in insert mode
-"set iskeyword-=-
+" set iskeyword-=-
 
 let g:netrw_list_hide='\.pyc$,\.DS_Store$,__pycache__/$,\.ropeproject/$'
 set wildignore=*.pyc
