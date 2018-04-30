@@ -40,5 +40,9 @@ function gmatch {
 
 
 function indexjs {
-     echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};"
+     FOLDER=$1
+     if [[ -z "$FOLDER" ]]; then
+        FOLDER="."
+     fi
+     cd $FOLDER && echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};"
 }
