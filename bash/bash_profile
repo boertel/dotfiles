@@ -6,6 +6,7 @@ unset file
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vi
+export GEDITOR=mvim
 
 # Python
 export PYTHONSTARTUP=~/.pythonstartup

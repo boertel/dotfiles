@@ -37,3 +37,8 @@ function gmatch {
 
 [[ -s "$HOME/Code/vasy/vasy-function.sh" ]] && source $HOME/Code/vasy/vasy-function.sh
 [[ -s "$HOME/Code/vasy/vasy-completion.sh" ]] && source $HOME/Code/vasy/vasy-completion.sh
+
+
+function indexjs {
+     echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};"
+}

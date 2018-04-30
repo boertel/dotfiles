@@ -150,4 +150,11 @@ let g:pymode_rope_goto_definition_cmd = 'vnew'
 " prevent to open the preview window on autocomplete
 set completeopt=menu
 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
 set secure
