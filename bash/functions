@@ -44,5 +44,9 @@ function indexjs {
      if [[ -z "$FOLDER" ]]; then
         FOLDER="."
      fi
-     cd $FOLDER && echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};"
+     (cd $FOLDER && echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};")
+}
+
+function add-svg {
+    svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
 }

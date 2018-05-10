@@ -13,11 +13,12 @@ install-hg:
 	ln -s `pwd`/hg/hgignore ~/.hgignore
 
 install-bash:
-	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt
+	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt ~/.tmux.conf
 	ln -s `pwd`/bash/bash_profile ~/.bash_profile
 	ln -s `pwd`/bash/aliases ~/.aliases
 	ln -s `pwd`/bash/functions ~/.functions
 	ln -s `pwd`/bash/prompt ~/.prompt
+	ln -s `pwd`/bash/tmux.conf ~/.tmux.conf
 
 install-bash-extra:
 	rm -rf ~/.ackrc
