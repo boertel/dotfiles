@@ -39,6 +39,7 @@ PATH=$PATH:/usr/local/redis/bin
 PATH=$PATH:~/Code/bin
 PATH=$PATH:$HOME/Code/gocode/bin
 PATH=$PATH:/usr/local/bin/google-cloud-sdk/bin
+PATH=$PATH:/Users/ben/Library/Python/2.7/bin
 export PATH
 
 ### Added by the Heroku Toolbelt

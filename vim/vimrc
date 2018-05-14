@@ -100,14 +100,14 @@ set number
 " autocmd InsertEnter * :set number
 "autocmd InsertLeave * :set relativenumber
 
-if has("gui_running")
-    set guifont=M+_1m_light:h16
-    " python line length
-    autocmd FileType python,javascript setlocal colorcolumn=80
-    hi ColorColumn ctermbg=lightgrey guibg=#474747
+" if has("gui_running")
+set guifont=M+_1m_light:h16
+" python line length
+autocmd FileType python,javascript setlocal colorcolumn=80
+hi ColorColumn ctermbg=lightgrey guibg=#474747
 
-    highlight SpellBad term=underline gui=undercurl guisp=Orange
-endif
+highlight SpellBad term=underline gui=undercurl guisp=Orange
+" endif
 
 hi Search guibg=#85C6EC guifg=#FFFFFF
 set hlsearch
