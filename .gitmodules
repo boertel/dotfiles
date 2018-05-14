@@ -66,4 +66,4 @@
 	url = git@github.com:honza/vim-snippets
 [submodule "vim/pack/boertel/start/ultisnips"]
 	path = vim/pack/boertel/start/ultisnips
-	url = git@github.com:SirVer/ultisnips
+	url = git@github.com:sirver/ultisnips
