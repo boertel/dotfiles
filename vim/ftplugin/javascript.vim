@@ -1,0 +1,1 @@
+UltiSnipsAddFiletype javascript-es6-react
