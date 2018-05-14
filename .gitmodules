@@ -15,7 +15,7 @@
 	url = https://github.com/groenewege/vim-less
 [submodule "vim/pack/boertel/start/vim-css-color"]
 	path = vim/pack/boertel/start/vim-css-color
-	url = https://github.com/skammer/vim-css-color
+	url = git@github.com:ap/vim-css-color
 [submodule "vim/pack/boertel/start/vim-fugitive"]
 	path = vim/pack/boertel/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
