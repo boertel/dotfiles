@@ -8,6 +8,7 @@ brew install vasy
 
 brew install httpie
 brew install vim --override-system-vim
+brew install tldr
 
 # for tmux and macos
 brew install reattach-to-user-namespace

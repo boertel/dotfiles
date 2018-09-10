@@ -13,9 +13,9 @@ install-hg:
 	ln -s `pwd`/hg/hgignore ~/.hgignore
 
 install-bash:
-	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt ~/.tmux.conf ~/.bash_rc
+	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt ~/.tmux.conf ~/.bashrc
 	ln -s `pwd`/bash/bash_profile ~/.bash_profile
-	ln -s `pwd`/bash/bash_profile ~/.bash_rc
+	ln -s `pwd`/bash/bash_profile ~/.bashrc
 	ln -s `pwd`/bash/aliases ~/.aliases
 	ln -s `pwd`/bash/functions ~/.functions
 	ln -s `pwd`/bash/prompt ~/.prompt
