@@ -23,3 +23,11 @@
     nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
 [push]
     default = current
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = boertel
+	email = ben@comediadesign.com

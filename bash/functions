@@ -50,3 +50,14 @@ function indexjs {
 function add-svg {
     svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
 }
+
+function t {
+    GITROOT="$(git root)"
+    CONF="$GITROOT/tmuxp.yaml"
+    if [ -e "$CONF" ]; then
+        tmuxp load $CONF
+    else
+        tmux new -s $(basename $(git root))
+    fi
+}
+
