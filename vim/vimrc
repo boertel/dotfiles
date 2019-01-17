@@ -139,10 +139,6 @@ let g:ale_linters = {
             \'html': [],
             \}
 
-" Prettier options to match default ones
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-
 " python-mode
 " let ale do its job
 let g:pymode_lint = 0
