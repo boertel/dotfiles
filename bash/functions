@@ -61,3 +61,6 @@ function t {
     fi
 }
 
+function gpretty {
+    git show --pretty --name-only HEAD | grep ".*\.js$" | xargs -L 1 prettier --write
+}
