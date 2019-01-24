@@ -57,7 +57,14 @@ function t {
     if [ -e "$CONF" ]; then
         tmuxp load $CONF
     else
-        tmux new -s $(basename $(git root))
+        SESSION_NAME=$(basename $(git root))
+        EXISTS=$(tmux ls | cut -d ":" -f 1 | grep $SESSION_NAME)
+        if [[ -z "$EXISTS" ]]; then
+            tmux new -s $SESSION_NAME
+        else
+            tmux attach -t $SESSION_NAME
+        fi
+
     fi
 }
 
