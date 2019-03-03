@@ -52,17 +52,24 @@ function add-svg {
 }
 
 function t {
-    GITROOT="$(git root)"
-    CONF="$GITROOT/tmuxp.yaml"
-    if [ -e "$CONF" ]; then
-        tmuxp load $CONF
+    TMUXP="$HOME/.tmuxp"
+    if git rev-parse --is-inside-work-tree > /dev/null; then
+        PARENT="$(git root)"
     else
-        SESSION_NAME=$(basename $(git root))
-        EXISTS=$(tmux ls | cut -d ":" -f 1 | grep $SESSION_NAME)
+        PARENT="$(pwd)"
+    fi
+    CONF="$PARENT/tmuxp.yaml"
+    SESSION_NAME="$(basename $PARENT)"
+    if [[ -e "$CONF" ]]; then
+        tmuxp load $CONF
+    elif [[ -e "$TMUXP/$SESSION_NAME.yaml" ]]; then
+        tmuxp load $SESSION_NAME
+    else
+        EXISTS=$(tmux ls | cut -d ":" -f 1 | grep "${SESSION_NAME}$")
         if [[ -z "$EXISTS" ]]; then
-            tmux new -s $SESSION_NAME
+            tmux new -s "$SESSION_NAME"
         else
-            tmux attach -t $SESSION_NAME
+            tmux attach -t "$SESSION_NAME"
         fi
 
     fi

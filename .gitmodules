@@ -67,3 +67,6 @@
 [submodule "vim/pack/boertel/start/ultisnips"]
 	path = vim/pack/boertel/start/ultisnips
 	url = git@github.com:sirver/ultisnips
+[submodule "vim/pack/boertel/start/black"]
+	path = vim/pack/boertel/start/black
+	url = git@github.com:ambv/black
