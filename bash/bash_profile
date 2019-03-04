@@ -36,9 +36,10 @@ PATH=$PATH:/usr/local/mongo/bin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/local/redis/bin
-PATH=$PATH:~/Code/bin
+PATH=$PATH:$HOME/Code/bin
 PATH=$PATH:$HOME/Code/gocode/bin
 PATH=$PATH:/usr/local/bin/google-cloud-sdk/bin
+PATH=$PATH:$HOME/Code/on-wifi/actions
 export PATH
 
 ### Added by the Heroku Toolbelt
