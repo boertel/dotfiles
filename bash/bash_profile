@@ -47,7 +47,7 @@ export GREP_OPTIONS='--color=auto'
 export NVM_DIR="$HOME/.nvm"
 export NVM_SYMLINK_CURRENT=false
 
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 export GOPATH="$HOME/go"
 [[ -s "$HOME/Code/git-push-my-face/.env" ]] && source ~/Code/git-push-my-face/.env
