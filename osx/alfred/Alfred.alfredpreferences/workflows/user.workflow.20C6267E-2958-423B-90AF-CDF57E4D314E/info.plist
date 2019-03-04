@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string></string>
-	<key>category</key>
-	<string>Productivity</string>
 	<key>connections</key>
 	<dict>
 		<key>6E4EEBD5-0AB8-4986-8EC0-1CD707F41689</key>
@@ -41,7 +39,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Log WordReference EN-FR</string>
+	<string>Log WordReference FR-ES</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -52,7 +50,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>http://www.wordreference.com/enfr/{query}</string>
+				<string>http://www.wordreference.com/fres/{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -69,11 +67,11 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>wre</string>
+				<string>wrf</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>WordReference EN-FR</string>
+				<string>WordReference FR-EN</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -94,7 +92,7 @@
 				<key>script</key>
 				<string>query=$1
 DATE=$(date -u +"%Y-%m-%dT%H:%M:%S%z")
-echo "$DATE $query" &gt;&gt; ~/.wr/enfr</string>
+echo "$DATE $query" &gt;&gt; ~/.wr/fres</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>

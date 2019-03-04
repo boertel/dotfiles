@@ -41,7 +41,7 @@
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Log WordReference EN-FR</string>
+	<string>Log WordReference ES-FR</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -52,7 +52,7 @@
 				<key>spaces</key>
 				<string></string>
 				<key>url</key>
-				<string>http://www.wordreference.com/enfr/{query}</string>
+				<string>http://www.wordreference.com/esfr/{query}</string>
 				<key>utf8</key>
 				<true/>
 			</dict>
@@ -69,11 +69,11 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>wre</string>
+				<string>wrs</string>
 				<key>subtext</key>
 				<string></string>
 				<key>text</key>
-				<string>WordReference EN-FR</string>
+				<string>WordReference ES-FR</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -94,7 +94,7 @@
 				<key>script</key>
 				<string>query=$1
 DATE=$(date -u +"%Y-%m-%dT%H:%M:%S%z")
-echo "$DATE $query" &gt;&gt; ~/.wr/enfr</string>
+echo "$DATE $query" &gt;&gt; ~/.wr/esfr</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
