@@ -2,10 +2,11 @@ install: install-nvim install-bash install-keybindings install-git\
 		install-fonts install-vim
 
 install-git:
-	rm -rf ~/.gitconfig ~/.git-templates
+	rm -rf ~/.gitconfig ~/.git-templates ~/.gitattributes
 	ln -s `pwd`/git/gitconfig ~/.gitconfig
+	ln -s `pwd`/git/gitattributes ~/.gitattributes
 	ln -s `pwd`/git/git-templates ~/.git-templates
-	./scripts/install-git-completion
+	./git/install-git-completion
 
 install-hg:
 	rm -rf ~/.hgrc ~/.hgignore
