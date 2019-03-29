@@ -2,7 +2,6 @@
     path = .gitconfig.local
 [core]
     editor = /usr/bin/vim
-	hooksPath = /Users/ben/Code/gite/githooks/
 [color]
     diff = auto
     status = auto

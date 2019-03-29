@@ -60,7 +60,9 @@ function t {
     fi
     CONF="$PARENT/tmuxp.yaml"
     SESSION_NAME="$(basename $PARENT)"
-    if [[ -e "$CONF" ]]; then
+    if [[ -e "$1" ]]; then
+        tmuxp load $1
+    elif [[ -e "$CONF" ]]; then
         tmuxp load $CONF
     elif [[ -e "$TMUXP/$SESSION_NAME.yaml" ]]; then
         tmuxp load $SESSION_NAME

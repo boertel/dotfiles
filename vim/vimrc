@@ -97,8 +97,6 @@ let g:neoformat_try_formatprg = 1
 " show line number and relative line number on command mode
 set relativenumber
 set number
-" autocmd InsertEnter * :set number
-"autocmd InsertLeave * :set relativenumber
 
 " if has("gui_running")
 set guifont=M+_1m_light:h16
@@ -113,7 +111,8 @@ hi Search guibg=#85C6EC guifg=#FFFFFF
 set hlsearch
 nnoremap <esc><esc> :silent! nohls<cr>
 
-ab pdb import pdb; pdb.set_trace()
+ab pdb __import__("pdb").set_trace()
+ab ipdb __import__("ipdb").set_trace()
 ab clog console.log(
 ab dbg debugger;
 
@@ -145,6 +144,7 @@ let g:pymode_lint = 0
 let g:pymode_rope_goto_definition_cmd = 'vnew'
 " prevent to open the preview window on autocomplete
 set completeopt=menu
+autocmd BufWritePre *.py execute ':Black'
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
