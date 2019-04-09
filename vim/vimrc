@@ -16,6 +16,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-stand
 
 map <Leader>j !python -m json.tool
 
+
 colorscheme wombat
 set go-=T
 
@@ -145,6 +146,9 @@ let g:pymode_rope_goto_definition_cmd = 'vnew'
 " prevent to open the preview window on autocomplete
 set completeopt=menu
 autocmd BufWritePre *.py execute ':Black'
+autocmd BufWritePre *.py execute ':Isort'
+
+autocmd VimResized * :wincmd =
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"

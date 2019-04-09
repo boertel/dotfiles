@@ -80,3 +80,7 @@ function t {
 function gpretty {
     git show --pretty --name-only HEAD | grep ".*\.js$" | xargs -L 1 prettier --write
 }
+
+function resetdb {
+    dropdb $1 && createdb $1
+}

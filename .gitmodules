@@ -73,3 +73,6 @@
 [submodule "vim/pack/boertel/start/vim-isort"]
 	path = vim/pack/boertel/start/vim-isort
 	url = git@github.com:vim-scripts/vim-isort
+[submodule "vim/pack/boertel/start/vim-mkdir"]
+	path = vim/pack/boertel/start/vim-mkdir
+	url = git@github.com:pbrisbin/vim-mkdir

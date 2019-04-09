@@ -49,6 +49,11 @@ if [[ "$ACTION" == "ls" ]]; then
     ls $GITROOT/$PACK_PATH/$REPO_NAME
 fi
 
+if [[ "$ACTION" == "ll" ]]; then
+    REPO_NAME=$2
+    ls -l -1 $GITROOT/$PACK_PATH/$REPO_NAME
+fi
+
 if [[ "$ACTION" == "path" ]]; then
     echo $PACK_PATH
 fi
