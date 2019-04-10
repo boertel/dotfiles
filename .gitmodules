@@ -76,3 +76,6 @@
 [submodule "vim/pack/boertel/start/vim-mkdir"]
 	path = vim/pack/boertel/start/vim-mkdir
 	url = git@github.com:pbrisbin/vim-mkdir
+[submodule "vim/pack/boertel/start/nerdtree"]
+	path = vim/pack/boertel/start/nerdtree
+	url = git@github.com:scrooloose/nerdtree
