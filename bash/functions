@@ -84,3 +84,8 @@ function gpretty {
 function resetdb {
     dropdb $1 && createdb $1
 }
+
+function gravatar {
+    HASH_EMAIL=$(md5 -q -s "$1")
+    echo "https://secure.gravatar.com/avatar/$HASH_EMAIL?size=$2"
+}
