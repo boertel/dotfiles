@@ -26,6 +26,7 @@ alias reload='source ~/.bash_profile'
 alias hour='echo -e "local:\t`date '+%H:%M:%S'`\nUTC:\t`date -u '+%H:%M:%S'`"'
 alias cleanvim='rm ~/.vim/backup/*;rm ~/.vim/tmp/*'
 alias hk=heroku
+alias hkpm="heroku run python manage.py"
 alias ghist='history | grep'
 
 alias ngr='ngrok http -subdomain=boertel'
@@ -42,10 +43,8 @@ alias today='cal | grep --color -EC6 "\b$(date +%e | sed "s/ //g")"'
 VIM="vim"
 if [[ "$VIM" == "vim" ]]; then
     alias vi='vim'
-    alias v='mvim'
 else
     alias vi='nvim'
-    alias v='gnvim'
 fi
 
 # databases

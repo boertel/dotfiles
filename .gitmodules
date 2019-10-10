@@ -79,3 +79,6 @@
 [submodule "vim/pack/boertel/start/nerdtree"]
 	path = vim/pack/boertel/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree
+[submodule "vim/pack/boertel/start/typescript-vim"]
+	path = vim/pack/boertel/start/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim

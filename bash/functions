@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 function mkpdir {
     mkdir $1; touch $1/__init__.py
 }
@@ -47,8 +50,25 @@ function indexjs {
      (cd $FOLDER && echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};")
 }
 
+function indexts {
+     FOLDER=$1
+     if [[ -z "$FOLDER" ]]; then
+        FOLDER="."
+     fi
+     (cd $FOLDER && echo -e "$(ls -1 *.tsx | grep -v "index.tsx" | sed -e "s/\(.*\)\.tsx/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.tsx | grep -v "index.tsx" | sed -e "s/\(.*\)\.tsx/  \1,/g")\n};")
+}
+
 function add-svg {
     svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
+}
+
+function is_cra {
+    PACKAGE_JSON="$1/./package.json"
+    if [[ -e $PACKAGE_JSON && $(jq ".scripts.start" -- $PACKAGE_JSON) =~ "react-scripts start" ]]; then
+        return 0
+    else
+        return 1
+    fi
 }
 
 function t {
@@ -60,21 +80,28 @@ function t {
     fi
     CONF="$PARENT/tmuxp.yaml"
     SESSION_NAME="$(basename $PARENT)"
+    DEST="$TMUXP/$SESSION_NAME.yaml"
     if [[ -e "$1" ]]; then
-        tmuxp load $1
+        CMD="tmuxp load $1"
     elif [[ -e "$CONF" ]]; then
-        tmuxp load $CONF
-    elif [[ -e "$TMUXP/$SESSION_NAME.yaml" ]]; then
-        tmuxp load $SESSION_NAME
+        # load ./tmupx.yaml
+        CMD="tmuxp load $CONF"
+    elif [[ -e $DEST ]]; then
+        # load ~/.tmuxp/*.conf
+        CMD="tmuxp load $SESSION_NAME"
+    elif is_cra $PARENT; then
+        TMUXP_CRA_TEMPLATE="$TMUXP/create-react-app.yaml"
+        CMD="cp $TMUXP_CRA_TEMPLATE $DEST && sed -i -e s/{{NAME}}/$SESSION_NAME/g $DEST && tmuxp load $SESSION_NAME"
     else
         EXISTS=$(tmux ls | cut -d ":" -f 1 | grep "${SESSION_NAME}$")
         if [[ -z "$EXISTS" ]]; then
-            tmux new -s "$SESSION_NAME"
+            CMD="tmux new -s \"$SESSION_NAME\""
         else
-            tmux attach -t "$SESSION_NAME"
+            CMD="tmux attach -t \"$SESSION_NAME\""
         fi
-
     fi
+    echo $CMD
+    eval $CMD
 }
 
 function gpretty {
@@ -88,4 +115,21 @@ function resetdb {
 function gravatar {
     HASH_EMAIL=$(md5 -q -s "$1")
     echo "https://secure.gravatar.com/avatar/$HASH_EMAIL?size=$2"
+}
+
+# smarter macvim
+function v {
+    SET_PWD="--cmd \"lcd $(pwd)\""
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
+        if [[ $# -gt 0 ]]; then
+            CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent $@"
+        else
+            CMD="mvim $SET_PWD $VIMSERVER"
+        fi
+    else
+        CMD="mvim $SET_PWD $@"
+    fi
+    echo $CMD
+    eval $CMD
 }
