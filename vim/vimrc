@@ -151,7 +151,6 @@ let g:pymode_rope_goto_definition_cmd = 'vnew'
 " prevent to open the preview window on autocomplete
 set completeopt=menu
 autocmd BufWritePre *.py execute ':Black'
-autocmd BufWritePre *.py execute ':Isort'
 
 autocmd VimResized * :wincmd =
 

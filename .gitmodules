@@ -70,9 +70,6 @@
 [submodule "vim/pack/boertel/start/black"]
 	path = vim/pack/boertel/start/black
 	url = git@github.com:ambv/black
-[submodule "vim/pack/boertel/start/vim-isort"]
-	path = vim/pack/boertel/start/vim-isort
-	url = git@github.com:vim-scripts/vim-isort
 [submodule "vim/pack/boertel/start/vim-mkdir"]
 	path = vim/pack/boertel/start/vim-mkdir
 	url = git@github.com:pbrisbin/vim-mkdir

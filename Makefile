@@ -51,3 +51,7 @@ install-homebrew:
 install-osx:
 	rm -rf ~/Library/Preferences/org.herf.Flux.plist
 	ln -s `pwd`/osx/flux/org.herf.Flux.plist ~/Library/Preferences/org.herf.Flux.plist
+
+install-psql:
+	rm -rf ~/.psqlrc
+	ln -s `pwd`/psql/psqlrc ~/.psqlrc

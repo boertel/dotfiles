@@ -42,21 +42,6 @@ function gmatch {
 [[ -s "$HOME/Code/vasy/vasy-completion.sh" ]] && source $HOME/Code/vasy/vasy-completion.sh
 
 
-function indexjs {
-     FOLDER=$1
-     if [[ -z "$FOLDER" ]]; then
-        FOLDER="."
-     fi
-     (cd $FOLDER && echo -e "$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.js | grep -v "index.js" | sed -e "s/\(.*\)\.js/  \1,/g")\n};")
-}
-
-function indexts {
-     FOLDER=$1
-     if [[ -z "$FOLDER" ]]; then
-        FOLDER="."
-     fi
-     (cd $FOLDER && echo -e "$(ls -1 *.tsx | grep -v "index.tsx" | sed -e "s/\(.*\)\.tsx/import \1 from '.\/\1';/g")\n\nexport {\n$(ls -1 *.tsx | grep -v "index.tsx" | sed -e "s/\(.*\)\.tsx/  \1,/g")\n};")
-}
 
 function add-svg {
     svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
@@ -119,17 +104,22 @@ function gravatar {
 
 # smarter macvim
 function v {
-    SET_PWD="--cmd \"lcd $(pwd)\""
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
-        if [[ $# -gt 0 ]]; then
-            CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent $@"
+    if [[ -z "$GUI_EDITOR" ]]; then
+        #SET_PWD="--cmd \"lcd $(pwd)\""
+        SET_PWD=""
+        if git rev-parse --git-dir > /dev/null 2>&1; then
+            VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
+            if [[ $# -gt 0 ]]; then
+                CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent $@"
+            else
+                CMD="mvim $SET_PWD $VIMSERVER"
+            fi
         else
-            CMD="mvim $SET_PWD $VIMSERVER"
+            CMD="mvim $SET_PWD $@"
         fi
+        echo $CMD
+        eval $CMD
     else
-        CMD="mvim $SET_PWD $@"
+        $GUI_EDITOR $@
     fi
-    echo $CMD
-    eval $CMD
 }
