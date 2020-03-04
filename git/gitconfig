@@ -20,6 +20,7 @@
     lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t%s %C(yellow)%d%Creset' --abbrev-commit -n 5
     compare = hub --pr
     nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
+    code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
 [push]
     default = current
 [filter "lfs"]

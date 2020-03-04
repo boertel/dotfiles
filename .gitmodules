@@ -61,9 +61,6 @@
 [submodule "vim/pack/boertel/start/vim-commentary.git"]
 	path = vim/pack/boertel/start/vim-commentary.git
 	url = git@github.com:tpope/vim-commentary.git
-[submodule "vim/pack/boertel/start/vim-snippets"]
-	path = vim/pack/boertel/start/vim-snippets
-	url = git@github.com:honza/vim-snippets
 [submodule "vim/pack/boertel/start/ultisnips"]
 	path = vim/pack/boertel/start/ultisnips
 	url = git@github.com:sirver/ultisnips
@@ -76,6 +73,3 @@
 [submodule "vim/pack/boertel/start/nerdtree"]
 	path = vim/pack/boertel/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree
-[submodule "vim/pack/boertel/start/typescript-vim"]
-	path = vim/pack/boertel/start/typescript-vim
-	url = git@github.com:leafgarland/typescript-vim

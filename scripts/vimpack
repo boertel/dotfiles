@@ -29,8 +29,8 @@ fi
 if [[ "$ACTION" == "rm" ]]; then
     REPO_NAME=$2
     REPO_PATH=$PACK_PATH/$REPO_NAME
-    git submodule deinit $REPO_PATH
-    git rm $REPO_PATH
+    git submodule deinit -f $REPO_PATH
+    git rm -f $REPO_PATH
     rm -Rf $GITROOT/.git/modules/$REPO_PATH
 fi
 
