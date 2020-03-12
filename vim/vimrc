@@ -22,6 +22,8 @@ set go-=T
 
 set splitright
 
+set hidden
+
 set visualbell
 set t_vb=
 syntax on
@@ -169,4 +171,6 @@ let g:snips_author="boertel"
 let g:prettier#autoformat = 0
 "autocmd BufWritePre *.ts,*.tsx Prettier
 
+
+let g:scratch_persistence_file="~/.vim-scratch"
 set secure
