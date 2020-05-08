@@ -42,6 +42,7 @@ PATH=$PATH:$HOME/Code/bin
 PATH=$PATH:$HOME/Code/gocode/bin
 PATH=$PATH:/usr/local/bin/google-cloud-sdk/bin
 PATH=$PATH:$HOME/Code/on-wifi/actions
+PATH=$PATH:$HOME/Library/Python/2.7/bin
 export PATH
 
 ### Added by the Heroku Toolbelt

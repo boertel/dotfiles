@@ -1,8 +1,9 @@
 \set QUIET 1
 
+-- usage: `SELECT * FROM table :G`
 \set G '\\set QUIET 1\\x\\g\\x\\set QUIET 0'
 
-\set PROMPT1 '%[%033[1m%]%M %/%R%[%033[0m%]%# '
+-- \set PROMPT1 '%[%033[1m%]%M %/%R%[%033[0m%]%# '
 
 \timing
 

@@ -73,12 +73,6 @@
 [submodule "vim/pack/boertel/start/nerdtree"]
 	path = vim/pack/boertel/start/nerdtree
 	url = git@github.com:scrooloose/nerdtree
-[submodule "vim/pack/boertel/start/vim-jsx-typescript"]
-	path = vim/pack/boertel/start/vim-jsx-typescript
-	url = git@github.com:peitalin/vim-jsx-typescript
-[submodule "vim/pack/boertel/start/typescript-vim"]
-	path = vim/pack/boertel/start/typescript-vim
-	url = git@github.com:leafgarland/typescript-vim
 [submodule "vim/pack/boertel/start/vim-conflicted"]
 	path = vim/pack/boertel/start/vim-conflicted
 	url = git@github.com:christoomey/vim-conflicted
@@ -91,3 +85,24 @@
 [submodule "vim/pack/boertel/start/goyo.vim"]
 	path = vim/pack/boertel/start/goyo.vim
 	url = git@github.com:junegunn/goyo.vim
+[submodule "vim/pack/boertel/start/rainbow_parentheses.vim"]
+	path = vim/pack/boertel/start/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim
+[submodule "vim/pack/boertel/start/vim-surround"]
+	path = vim/pack/boertel/start/vim-surround
+	url = git@github.com:tpope/vim-surround
+[submodule "vim/pack/boertel/start/vim-abolish.git"]
+	path = vim/pack/boertel/start/vim-abolish.git
+	url = git@github.com:tpope/vim-abolish.git
+[submodule "vim/pack/boertel/start/grep"]
+	path = vim/pack/boertel/start/grep
+	url = git@github.com:yegappan/grep
+[submodule "vim/pack/boertel/start/vim-test"]
+	path = vim/pack/boertel/start/vim-test
+	url = git@github.com:vim-test/vim-test
+[submodule "vim/pack/boertel/start/vim-isort"]
+	path = vim/pack/boertel/start/vim-isort
+	url = git@github.com:fisadev/vim-isort
+[submodule "vim/pack/boertel/start/vim-terraform"]
+	path = vim/pack/boertel/start/vim-terraform
+	url = git@github.com:hashivim/vim-terraform

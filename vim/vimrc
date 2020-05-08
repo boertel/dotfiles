@@ -3,7 +3,7 @@ filetype off
 
 set runtimepath=$HOME/Code/dotfiles/vim,$VIMRUNTIME
 
-filetype plugin indent on
+"filetype plugin indent on
 
 set shell=bash\ --login
 
@@ -72,6 +72,15 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+
+" vim-test
+" these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
+nmap <silent> t<C-n> :TestNearest<CR>
+nmap <silent> t<C-f> :TestFile<CR>
+nmap <silent> t<C-s> :TestSuite<CR>
+nmap <silent> t<C-l> :TestLast<CR>
+nmap <silent> t<C-g> :TestVisit<CR>
+
 let mapleader = ","
 cnoreabbrev W w
 cnoreabbrev E e
@@ -107,15 +116,16 @@ let g:neoformat_try_formatprg = 1
 set relativenumber
 set number
 
-" if has("gui_running")
-set guifont=M+_1m_light:h16
+if has("gui_running")
+    set guifont=M+_1m_light:h16
+endif
+
 " python line length
 autocmd FileType python,javascript setlocal colorcolumn=80
 hi ColorColumn ctermbg=lightgrey guibg=#474747
 
-highlight SpellBad term=underline gui=undercurl guisp=Orange
-" endif
-
+hi SpellBad term=underline gui=undercurl guisp=Orange
+hi MatchParen guibg=#b77fdb guifg=blue
 hi Search guibg=#85C6EC guifg=#FFFFFF
 set hlsearch
 nnoremap <esc><esc> :silent! nohls<cr>
@@ -173,4 +183,12 @@ let g:prettier#autoformat = 0
 
 
 let g:scratch_persistence_file="~/.vim-scratch"
+
+if has('gui_vimr')
+    source ~/.config/nvim/ginit.vim
+endif
+
+au VimEnter * RainbowParenthesesToggle
+
+
 set secure
