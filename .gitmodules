@@ -19,9 +19,6 @@
 [submodule "vim/pack/boertel/start/vim-fugitive"]
 	path = vim/pack/boertel/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/pack/boertel/start/vim-jsx"]
-	path = vim/pack/boertel/start/vim-jsx
-	url = https://github.com/mxw/vim-jsx
 [submodule "vim/pack/boertel/start/ale"]
 	path = vim/pack/boertel/start/ale
 	url = https://github.com/w0rp/ale
@@ -106,3 +103,9 @@
 [submodule "vim/pack/boertel/start/vim-terraform"]
 	path = vim/pack/boertel/start/vim-terraform
 	url = git@github.com:hashivim/vim-terraform
+[submodule "vim/pack/boertel/start/vim-javascript"]
+	path = vim/pack/boertel/start/vim-javascript
+	url = git@github.com:pangloss/vim-javascript
+[submodule "vim/pack/boertel/start/vim-jsx-pretty"]
+	path = vim/pack/boertel/start/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty

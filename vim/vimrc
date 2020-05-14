@@ -190,5 +190,16 @@ endif
 
 au VimEnter * RainbowParenthesesToggle
 
+" browser to use when `gx`
+let g:netrw_browser_viewer = 'open'
+
+let g:vim_jsx_pretty_colorful_config = 1
+
+hi jsxAttrib guifg=#8ac6f2 gui=none
+hi jsVariableDef guifg=#b77fdb gui=none
+highlight def link jsDestructuringArray jsVariableDef
+highlight def link jsDestructuringBlock jsVariableDef
 
 set secure
+
+
