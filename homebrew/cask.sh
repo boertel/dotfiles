@@ -8,5 +8,11 @@ brew cask install flux
 brew cask install spotify
 brew cask install google-chrome
 brew cask install firefox
+brew cask install hammerspoon
+brew cask install alfred
+brew cask install anybar
+brew cask install chromium
+brew cask install figma
 
 brew cask install dafuqtor/tap/midclick
+brew cask install keycastr

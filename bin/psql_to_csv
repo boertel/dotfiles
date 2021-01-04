@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+QUERY=$1
+APP=$2
+
+OUTPUT="STDOUT"
+
+CMD="\COPY ($QUERY) TO $OUTPUT DELIMITER ',' CSV HEADER"
+
+heroku pg:psql -c "$CMD" -a "$APP"

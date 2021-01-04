@@ -21,7 +21,7 @@ function rm () {
             while [ -e ~/.Trash/"$dst" ]; do
                 dst="$dst "$(date +%H-%M-%S)
             done
-            mv "$path" ~/.Trash/"$dst"
+            /bin/mv "$path" ~/.Trash/"$dst"
         fi
     done
 }
@@ -122,4 +122,10 @@ function v {
     else
         $GUI_EDITOR $@
     fi
+}
+
+function hk_pgrestore {
+    DUMP_FILE="$1"
+    DATABASE_NAME="$2"
+    createdb "$DATABASE_NAME" && pg_restore --verbose --clean --no-acl --no-owner -h localhost -U ben -d "$DATABASE_NAME" "$DUMP_FILE"
 }

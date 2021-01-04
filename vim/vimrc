@@ -200,6 +200,13 @@ hi jsVariableDef guifg=#b77fdb gui=none
 highlight def link jsDestructuringArray jsVariableDef
 highlight def link jsDestructuringBlock jsVariableDef
 
+" ctags
+set tags=./tags;
+" open split vertically
+nnoremap <C-W><C-V>f :exec "vert norm <C-V><C-W>f"<CR>
+nnoremap <C-W><C-V>[ :exec "vert norm <C-V><C-W>["<CR>
+
+
 set secure
 
 

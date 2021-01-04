@@ -1,8 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "import React, { Component } from 'react';\n\nclass MyComponent extends Component {\n  render() {\n    return <div \/>;\n  }\n}\n\nexport default MyComponent;",
-    "uid" : "CCBF5F9C-45DD-4871-9B1F-26116BEFB859",
-    "name" : "basic",
-    "keyword" : "basic"
-  }
-}

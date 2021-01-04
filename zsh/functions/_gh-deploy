@@ -1,0 +1,7 @@
+#compdef _ghdeploy gh-deploy
+
+_ghdeploy () {
+    compadd cmd1 cmd2 cmd3
+}
+
+_ghdeploy "$@"

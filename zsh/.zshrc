@@ -1,0 +1,87 @@
+eval "$(starship init zsh)"
+
+for file in ~/.{functions,aliases,prompt,variables,bash_private}; do
+    [ -r "$file" ] && [ -f "$file" ] && source $file
+done
+
+# define alt+[arrows] to behave like bash
+bindkey "^[b" backward-word
+bindkey "^[f" forward-word
+
+
+# Look up history with ctrl+R
+bindkey '^R' history-incremental-search-backward
+
+
+setopt GLOB_COMPLETE
+setopt AUTO_CD
+
+export EDITOR=vi
+export GEDITOR=mvim
+
+HISTFILE=$$HOME/.zsh_history
+SAVEHIST=5000
+HISTSIZE=2000
+# share history across multiple zsh sessions
+setopt SHARE_HISTORY
+# append to history
+setopt APPEND_HISTORY
+# expire duplicates first
+setopt HIST_EXPIRE_DUPS_FIRST
+# do not store duplications
+setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
+
+# not asking confirmation when !!
+setopt NO_HIST_VERIFY
+
+
+# terminal
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export CLICOLOR=1
+#
+# node/nvm/npm
+export NVM_DIR="$HOME/.nvm"
+export NVM_SYMLINK_CURRENT=false
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# tmux
+export DISABLE_AUTO_TITLE='true'
+
+# rust
+[[ -s "$HOME/.cargo/env" ]] && source $HOME/.cargo/env
+
+# python
+eval "$(pyenv init -)"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+
+# go
+export GOPATH=$GOPATH:$HOME/Code/gocode
+export PATH=$PATH:$HOME/Code/gocode/bin
+ctags=/usr/local/bin/ctags
+
+# fzf fuzzy finder file
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPS="--extended"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+
+# auto completion
+fpath=(~/Code/dotfiles/zsh/functions $fpath)
+autoload -Uz compinit && compinit
+
+# git
+# zstyle ':completion:*:*:git:*' script ~/Code/dotfiles/zsh/functions/git-completion.zsh
+
+# Debug autocompletion
+# zstyle ':completion:*' verbose yes
+# zstyle ':completion:*:descriptions' format '%B%d%b'
+# zstyle ':completion:*:messages' format '%d'
+# zstyle ':completion:*:warnings' format 'No matches for: %d'
+# zstyle ':completion:*' group-name ""
+
+
+[[ -s "/Users/ben/Code/vasy/vasy-function" ]] && source /Users/ben/Code/vasy/vasy-function

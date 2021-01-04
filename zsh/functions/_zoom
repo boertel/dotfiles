@@ -1,0 +1,5 @@
+#compdef zoom
+
+function _zoom() {
+    compadd $(cat ~/.zzrc | cut -d ":" -f 1)
+}

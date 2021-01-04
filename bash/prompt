@@ -1,28 +1,29 @@
 # configure prompt
 # Get the name of the current git branch and if there is some uncommit changes to it.
 function parse_git_dirty {
-	[[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
+    [[ $(git status --porcelain 2> /dev/null) ]] && echo "*"
 }
-function parse_git_branch {
-	git branch --no-color 2> /dev/null \
-	| sed -e '/^[^*]/d' -e "s/* \(.*\)/:\1$(parse_git_dirty)/"
-}
-function prompt_git_branch {
-    NAME=''
-    GITROOT=`git rev-parse --show-toplevel 2> /dev/null`
-    [[ -n $GITROOT ]] && NAME=`basename $GITROOT`
-	git branch --no-color 2> /dev/null \
-        | sed -e '/^[^*]/d' -e "s/* \(.*\)/git - $NAME:\1$(parse_git_dirty)/"
-}
-
-_PS1w="\[\e[0;36m\]\w\[\e[m\]"
-_PS1git="\[\e[0;33m\]\$(parse_git_branch)\[\e[m\]$ "
-my_prompt="$_PS1w$_PS1git"
-
-if [ -n "$SSH_CLIENT" ];then
-    my_prompt="\[\e[1;33m\]\h@\u:\[\e[m\]\w\[\e[1;33m\]$ \[\e[m\]"
-fi
-export PS1=$my_prompt
-
-# Windows Title
-export PROMPT_COMMAND='echo -ne "\033]0;$(prompt_git_branch)\007"'
+# function parse_git_branch {
+# 	git branch --no-color 2> /dev/null \
+# 	| sed -e '/^[^*]/d' -e "s/* \(.*\)/:\1$(parse_git_dirty)/"
+# }
+# function prompt_git_branch {
+#     NAME=''
+#     GITROOT=`git rev-parse --show-toplevel 2> /dev/null`
+#     [[ -n $GITROOT ]] && NAME=`basename $GITROOT`
+# 	git branch --no-color 2> /dev/null \
+#         | sed -e '/^[^*]/d' -e "s/* \(.*\)/git - $NAME:\1$(parse_git_dirty)/"
+# }
+# 
+# _PS1w="\[\e[0;36m\]\w\[\e[m\]"
+# _PS1git="\[\e[0;33m\]\$(parse_git_branch)\[\e[m\]$ "
+# my_prompt="$_PS1w$_PS1git"
+# 
+# if [ -n "$SSH_CLIENT" ];then
+#     my_prompt="\[\e[1;33m\]\h@\u:\[\e[m\]\w\[\e[1;33m\]$ \[\e[m\]"
+# fi
+# export PS1=$my_prompt
+# 
+# # Windows Title
+# export PROMPT_COMMAND='echo -ne "\033]0;$(prompt_git_branch)\007"'
+#

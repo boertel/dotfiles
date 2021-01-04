@@ -8,3 +8,5 @@ nvim/.netrwhist
 vim/.netrwhist
 vim/black/
 vim/tmp/
+
+zsh/.zcompdump

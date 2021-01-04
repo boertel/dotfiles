@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "git rev-parse --show-toplevel",
+    "uid" : "62B4EEFD-D00D-4727-AF13-312E3F7412EB",
+    "name" : "git root",
+    "keyword" : ""
+  }
+}

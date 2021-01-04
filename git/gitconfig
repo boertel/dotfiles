@@ -10,6 +10,7 @@
 [color "status"]
     untracked = cyan
 [alias]
+    shame = blame
     st = status -s
     ci = commit -m
     diffc = diff --cached
@@ -23,6 +24,7 @@
     code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"
     set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
     mru = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+    oops = commit --amend --no-edit
 
 [push]
     default = current

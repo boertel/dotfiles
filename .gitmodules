@@ -109,3 +109,6 @@
 [submodule "vim/pack/boertel/start/vim-jsx-pretty"]
 	path = vim/pack/boertel/start/vim-jsx-pretty
 	url = git@github.com:MaxMEllon/vim-jsx-pretty
+[submodule "vim/pack/boertel/start/vim-prisma"]
+	path = vim/pack/boertel/start/vim-prisma
+	url = git@github.com:pantharshit00/vim-prisma

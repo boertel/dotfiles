@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "dangerouslySetInnerHTML={{ __html: }}",
+    "uid" : "227FF27F-77EE-45C3-A103-2C8D79E6BC34",
+    "name" : "dangerous",
+    "keyword" : ""
+  }
+}
