@@ -47,47 +47,6 @@ function add-svg {
     svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
 }
 
-function is_cra {
-    PACKAGE_JSON="$1/./package.json"
-    if [[ -e $PACKAGE_JSON && $(jq ".scripts.start" -- $PACKAGE_JSON) =~ "react-scripts start" ]]; then
-        return 0
-    else
-        return 1
-    fi
-}
-
-function t {
-    TMUXP="$HOME/.tmuxp"
-    if git rev-parse --is-inside-work-tree > /dev/null; then
-        PARENT="$(git root)"
-    else
-        PARENT="$(pwd)"
-    fi
-    CONF="$PARENT/tmuxp.yaml"
-    SESSION_NAME="$(basename $PARENT)"
-    DEST="$TMUXP/$SESSION_NAME.yaml"
-    if [[ -e "$1" ]]; then
-        CMD="tmuxp load $1"
-    elif [[ -e "$CONF" ]]; then
-        # load ./tmupx.yaml
-        CMD="tmuxp load $CONF"
-    elif [[ -e $DEST ]]; then
-        # load ~/.tmuxp/*.conf
-        CMD="tmuxp load $SESSION_NAME"
-    elif is_cra $PARENT; then
-        TMUXP_CRA_TEMPLATE="$TMUXP/create-react-app.yaml"
-        CMD="cp $TMUXP_CRA_TEMPLATE $DEST && sed -i -e s/{{NAME}}/$SESSION_NAME/g $DEST && tmuxp load $SESSION_NAME"
-    else
-        EXISTS=$(tmux ls | cut -d ":" -f 1 | grep "${SESSION_NAME}$")
-        if [[ -z "$EXISTS" ]]; then
-            CMD="tmux new -s \"$SESSION_NAME\""
-        else
-            CMD="tmux attach -t \"$SESSION_NAME\""
-        fi
-    fi
-    echo $CMD
-    eval $CMD
-}
 
 function gpretty {
     git show --pretty --name-only HEAD | grep ".*\.js$" | xargs -L 1 prettier --write

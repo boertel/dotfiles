@@ -36,3 +36,5 @@
 [user]
 	name = boertel
 	email = ben@comediadesign.com
+[gite]
+    brew = $HOME/Code/homebrew-tap/
