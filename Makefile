@@ -1,5 +1,5 @@
-install: install-nvim install-bash install-keybindings install-git\
-		install-fonts install-vim
+install: install-nvim install-bash install-zsh install-bash-extra\
+		install-keybindings install-git install-fonts install-vim
 
 install-git:
 	rm -rf ~/.gitconfig ~/.git-templates ~/.gitattributes
@@ -14,17 +14,21 @@ install-hg:
 	ln -s `pwd`/hg/hgignore ~/.hgignore
 
 install-bash:
-	rm -rf ~/.bash_profile ~/.aliases ~/.functions ~/.prompt ~/.tmux.conf ~/.bashrc
+	rm -rf ~/.bash_profile ~/.bashrc ~/.prompt
 	ln -s `pwd`/bash/bash_profile ~/.bash_profile
 	ln -s `pwd`/bash/bash_profile ~/.bashrc
-	ln -s `pwd`/bash/aliases ~/.aliases
-	ln -s `pwd`/bash/functions ~/.functions
 	ln -s `pwd`/bash/prompt ~/.prompt
-	ln -s `pwd`/bash/tmux.conf ~/.tmux.conf
+
+install-zsh:
+	rm -rf ~/.zshrc ~/.zshenv
+	ln -s `pwd`/zsh/zshrc ~/.zshrc
 
 install-bash-extra:
-	rm -rf ~/.ackrc
+	rm -rf ~/.ackrc ~/.aliases ~/.functions ~/.tmux.conf
 	ln -s `pwd`/bash/ackrc ~/.ackrc
+	ln -s `pwd`/bash/tmux.conf ~/.tmux.conf
+	ln -s `pwd`/bash/aliases ~/.aliases
+	ln -s `pwd`/bash/functions ~/.functions
 
 install-nvim:
 	rm -rf ~/.config/nvim

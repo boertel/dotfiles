@@ -27,6 +27,8 @@ alias hour='echo -e "local:\t`date '+%H:%M:%S'`\nUTC:\t`date -u '+%H:%M:%S'`"'
 alias cleanvim='rm ~/.vim/tmp/*'
 alias hk=heroku
 alias hkpm="heroku run python manage.py"
+alias hk_dburl="heroku config:get DATABASE_URL -a"
+alias tf='terraform'
 alias ghist='history | grep'
 
 alias ngr='ngrok http -subdomain=boertel'
@@ -45,9 +47,7 @@ else
     alias vi='nvim'
 fi
 
-# databases
-# mysql
-alias mysql='/usr/local/mysql/bin/mysql'
+
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 
 function sloc {
