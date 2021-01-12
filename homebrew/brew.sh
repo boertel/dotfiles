@@ -20,11 +20,10 @@ brew install heroku
 brew install bat
 brew install jq
 brew install meilisearch
-brew install pyenv
-brew install pipenv
 brew install railway
 brew install redis
 brew install s3cmd
 brew install stripe
 brew install starship
 brew install tmux
+brew install terraform

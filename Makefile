@@ -59,3 +59,12 @@ install-osx:
 install-psql:
 	rm -rf ~/.psqlrc
 	ln -s `pwd`/psql/psqlrc ~/.psqlrc
+
+install-node:
+	rm -rf ~/.nvm
+	./node/install.sh
+
+install-python:
+	rm -rf ~/.pyenv
+	./python/install.sh
+	
