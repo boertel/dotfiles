@@ -3,6 +3,8 @@ brew upgrade
 
 brew tap boertel/tap
 
+brew install gite
+brew install t
 brew install bump
 brew install vasy
 brew install gh-deploy
