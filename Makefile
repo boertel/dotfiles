@@ -67,4 +67,3 @@ install-node:
 install-python:
 	rm -rf ~/.pyenv
 	./python/install.sh
-	
