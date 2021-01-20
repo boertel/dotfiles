@@ -7,53 +7,87 @@ if [[ $# == 0 ]]; then
     echo "  rm      repo_name"
     echo "  update  repo_name"
     echo "  ls      repo_name"
+    echo "  path"
     echo "  init"
     exit 1
 fi
 
 
-GITROOT=$(git root)
-PACK_PATH=vim/pack/boertel/start
+GITROOT="$(git root)"
+PACK_PATH="vim/pack/boertel/start"
 
 ACTION=$1
+shift
 
+add () {
+    if [[ -n "$1" ]]; then
+        REPO=$1
+        REPO_NAME=$(echo "$REPO" | cut -d "/" -f 2-)
+        cd "$GITROOT" && git submodule add "git@github.com:$REPO $PACK_PATH/$REPO_NAME"
+    else
+        echo "add <username>/<repo>"
+        exit 1
+    fi
+}
 
-if [[ "$ACTION" == "add" ]]; then
-    REPO=$2
-    USER_NAME=$(echo $REPO | cut -d "/" -f 1)
-    REPO_NAME=$(echo $REPO | cut -d "/" -f 2-)
-    cd $GITROOT && git submodule add git@github.com:$REPO $PACK_PATH/$REPO_NAME
-fi
+remove() {
+    if [[ -n "$1" ]]; then
+        REPO_NAME=$1
+        REPO_PATH=$PACK_PATH/$REPO_NAME
+        git submodule deinit -f "$REPO_PATH"
+        git rm -f "$REPO_PATH"
+        rm -Rf "$GITROOT/.git/modules/$REPO_PATH"
+    else
+        echo "rm <repo>"
+        exit 1
+    fi
+}
 
+update() {
+    if [[ -n "$1" ]]; then
+        REPO_NAME=$1
+        REPO_PATH="$GITROOT/$PACK_PATH/$REPO_NAME"
+        cd "$REPO_PATH" && git pull
+        cd "$REPO_PATH" && git tag
+        echo "choose tag [<enter> to keep current HEAD]"
+        read -r TAG
+        if [[ -z "$TAG" ]]; then
+            cd "$REPO_PATH" && git checkout "$TAG"
+        fi
+    else
+        echo "rm <repo>"
+        exit 1
+    fi
+}
 
-if [[ "$ACTION" == "rm" ]]; then
-    REPO_NAME=$2
-    REPO_PATH=$PACK_PATH/$REPO_NAME
-    git submodule deinit -f $REPO_PATH
-    git rm -f $REPO_PATH
-    rm -Rf $GITROOT/.git/modules/$REPO_PATH
-fi
+list() {
+    REPO_NAME=$1
+    ls "$GITROOT/$PACK_PATH/$REPO_NAME"
+}
 
-if [[ "$ACTION" == "update" ]]; then
-    REPO_NAME=$2
-    cd $GITROOT/$PACK_PATH/$REPO_NAME && git pull
-fi
+case "$ACTION" in
+    "add")
+        add $@
+        ;;
 
-if [[ "$ACTION" == "init" ]]; then
-    git submodule init
-    git submodule update
-fi
+    "rm")
+        remove $@
+        ;;
 
-if [[ "$ACTION" == "ls" ]]; then
-    REPO_NAME=$2
-    ls $GITROOT/$PACK_PATH/$REPO_NAME
-fi
+    "update")
+        update $@
+        ;;
 
-if [[ "$ACTION" == "ll" ]]; then
-    REPO_NAME=$2
-    ls -l -1 $GITROOT/$PACK_PATH/$REPO_NAME
-fi
+    "init")
+        git submodule init
+        git submodule update
+        ;;
 
-if [[ "$ACTION" == "path" ]]; then
-    echo $PACK_PATH
-fi
+    "ls")
+        list $@
+        ;;
+
+    "path")
+        echo "$PACK_PATH/$1"
+        ;;
+esac

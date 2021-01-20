@@ -208,5 +208,3 @@ nnoremap <C-W><C-V>[ :exec "vert norm <C-V><C-W>["<CR>
 
 
 set secure
-
-
