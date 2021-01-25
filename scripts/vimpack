@@ -13,7 +13,7 @@ if [[ $# == 0 ]]; then
 fi
 
 
-GITROOT="$(git root)"
+GITROOT="$(git rev-parse --show-toplevel)"
 PACK_PATH="vim/pack/boertel/start"
 
 ACTION=$1

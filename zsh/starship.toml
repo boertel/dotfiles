@@ -24,7 +24,6 @@ disabled = true
 command = "echo '*'"
 when = "[[ $(git status --porcelain 2> /dev/null) ]] && true"
 style = "yellow"
-prefix = ''
 
 [nodejs]
 disabled = true

@@ -48,6 +48,7 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # tmux
 export DISABLE_AUTO_TITLE='true'
+export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 # rust
 [[ -s "$HOME/.cargo/env" ]] && source $HOME/.cargo/env
@@ -85,3 +86,7 @@ autoload -Uz compinit && compinit
 
 
 [[ -s "/Users/ben/Code/vasy/vasy-function" ]] && source /Users/ben/Code/vasy/vasy-function
+
+# postgres with https://github.com/petere/homebrew-postgresql
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
+#PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"

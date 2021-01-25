@@ -22,8 +22,8 @@ install-bash:
 install-zsh:
 	rm -rf ~/.zshrc ~/.zshenv
 	ln -s `pwd`/zsh/zshrc ~/.zshrc
-	rm -rf ~/.config/startship.toml
-	ln -s `pwd`/zsh/starship.toml ~/.config/startship.toml
+	rm -rf ~/.config/starship.toml
+	ln -s `pwd`/zsh/starship.toml ~/.config/starship.toml
 
 install-bash-extra:
 	rm -rf ~/.ackrc ~/.aliases ~/.functions ~/.tmux.conf
