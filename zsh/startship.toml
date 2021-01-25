@@ -1,0 +1,33 @@
+add_newline = false
+
+[line_break]
+disabled = true
+
+[directory]
+truncate_to_repo = false
+truncation_length = 8
+style = "cyan"
+
+[character]
+style_success = "green"
+style_failure = "red"
+symbol = "$"
+
+[git_branch]
+symbol = ""
+style = "yellow"
+
+[git_status]
+disabled = true
+
+[custom.dirty]
+command = "echo '*'"
+when = "[[ $(git status --porcelain 2> /dev/null) ]] && true"
+style = "yellow"
+prefix = ''
+
+[nodejs]
+disabled = true
+
+[package]
+disabled = true
