@@ -57,6 +57,8 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 eval "$(pyenv init -)"
 export PATH="$HOME/.poetry/bin:$PATH"
 
+# postgres with https://github.com/petere/homebrew-postgresql
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 
 # go
 export GOPATH=$GOPATH:$HOME/Code/gocode
@@ -86,7 +88,3 @@ autoload -Uz compinit && compinit
 
 
 [[ -s "/Users/ben/Code/vasy/vasy-function" ]] && source /Users/ben/Code/vasy/vasy-function
-
-# postgres with https://github.com/petere/homebrew-postgresql
-export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
-#PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
