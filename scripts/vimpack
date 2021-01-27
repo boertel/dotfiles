@@ -23,7 +23,7 @@ add () {
     if [[ -n "$1" ]]; then
         REPO=$1
         REPO_NAME=$(echo "$REPO" | cut -d "/" -f 2-)
-        cd "$GITROOT" && git submodule add "git@github.com:$REPO $PACK_PATH/$REPO_NAME"
+        cd "$GITROOT" && git submodule add "git@github.com:$REPO.git" "$PACK_PATH/$REPO_NAME" --depth=1 ${@:2}
     else
         echo "add <username>/<repo>"
         exit 1
@@ -67,7 +67,7 @@ list() {
 
 case "$ACTION" in
     "add")
-        add $@
+        add "$@"
         ;;
 
     "rm")
