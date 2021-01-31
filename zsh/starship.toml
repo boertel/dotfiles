@@ -33,3 +33,8 @@ disabled = true
 
 [python]
 format = 'via [${symbol}${pyenv_prefix}(${version} )($virtualenv)]($style)'
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀 "

@@ -6,6 +6,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias rm='rm -i'
 alias utc='date -u'
+alias week='date -%V'
 
 alias ..='cd ..'
 alias ...='cd ../..'
