@@ -40,9 +40,6 @@
 [submodule "vim/pack/boertel/start/vim-styled-components"]
 	path = vim/pack/boertel/start/vim-styled-components
 	url = git@github.com:fleischie/vim-styled-components
-[submodule "vim/pack/boertel/start/python-mode"]
-	path = vim/pack/boertel/start/python-mode
-	url = git@github.com:klen/python-mode
 [submodule "vim/pack/boertel/start/neoformat"]
 	path = vim/pack/boertel/start/neoformat
 	url = git@github.com:sbdchd/neoformat
