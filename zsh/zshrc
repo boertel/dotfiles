@@ -39,7 +39,7 @@ setopt NO_HIST_VERIFY
 # terminal
 export LSCOLORS=GxFxCxDxBxegedabagaced
 export CLICOLOR=1
-#
+
 # node/nvm/npm
 export NVM_DIR="$HOME/.nvm"
 export NVM_SYMLINK_CURRENT=false
@@ -64,6 +64,9 @@ export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 export GOPATH=$GOPATH:$HOME/Code/gocode
 export PATH=$PATH:$HOME/Code/gocode/bin
 ctags=/usr/local/bin/ctags
+
+# ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH"
 
 # fzf fuzzy finder file
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

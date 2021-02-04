@@ -163,10 +163,6 @@ let g:ale_linters = {
             \'html': [],
             \}
 
-" python-mode
-" let ale do its job
-let g:pymode_lint = 0
-let g:pymode_rope_goto_definition_cmd = 'vnew'
 " prevent to open the preview window on autocomplete
 set completeopt=menu
 autocmd BufWritePre *.py execute ':Black'
