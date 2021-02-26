@@ -1,0 +1,8 @@
+{
+  "alfredsnippet" : {
+    "snippet" : "text-overflow: ellipsis;\nwhite-space: nowrap;\nmin-width: 0;\noverflow: hidden;",
+    "uid" : "6A0E71BA-E10A-405F-8916-C0236C7EDBC4",
+    "name" : "ellipsis",
+    "keyword" : "ellipsis"
+  }
+}

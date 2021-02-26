@@ -89,5 +89,9 @@ autoload -Uz compinit && compinit
 # zstyle ':completion:*:warnings' format 'No matches for: %d'
 # zstyle ':completion:*' group-name ""
 
+# gpg passphrase
+export GPG_TTY=$(tty)
+
 
 [[ -s "/Users/ben/Code/vasy/vasy-function" ]] && source /Users/ben/Code/vasy/vasy-function
+export PATH="$PATH:$HOME/Code/dotfiles/bin"

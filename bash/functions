@@ -69,7 +69,7 @@ function v {
         if git rev-parse --git-dir > /dev/null 2>&1; then
             VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
             if [[ $# -gt 0 ]]; then
-                CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent $@"
+                CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent \"$@\""
             else
                 CMD="mvim $SET_PWD $VIMSERVER"
             fi

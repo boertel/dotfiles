@@ -32,8 +32,8 @@ add () {
 
 remove() {
     if [[ -n "$1" ]]; then
-        REPO_NAME=$1
-        REPO_PATH=$PACK_PATH/$REPO_NAME
+        REPO_NAME="$1"
+        REPO_PATH="$PACK_PATH/$REPO_NAME"
         git submodule deinit -f "$REPO_PATH"
         git rm -f "$REPO_PATH"
         rm -Rf "$GITROOT/.git/modules/$REPO_PATH"

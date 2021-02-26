@@ -17,6 +17,19 @@
 			<key>utf8</key>
 			<true/>
 		</dict>
+		<key>7961EC85-7158-43B5-B48C-FFA238E7C260</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>mdn</string>
+			<key>text</key>
+			<string>MDN web docs</string>
+			<key>url</key>
+			<string>https://developer.mozilla.org/en-US/search?q={query}</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
 		<key>B990C9C2-CFD7-4116-B14F-7643951DF43B</key>
 		<dict>
 			<key>enabled</key>
