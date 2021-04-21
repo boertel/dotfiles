@@ -91,6 +91,8 @@ cnoreabbrev vpslit vsplit
 iabbrev onsole cosnole
 iabbrev cosnole console
 iabbrev consoel console
+iabbrev vehicule vehicle
+iabbrev Vehicule Vehicle
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
@@ -127,6 +129,7 @@ endif
 " python line length
 autocmd FileType python,javascript setlocal colorcolumn=80
 hi ColorColumn ctermbg=lightgrey guibg=#474747
+let g:python_highlight_all = 1
 
 hi SpellBad term=underline gui=undercurl guisp=Orange
 hi MatchParen guibg=#b77fdb guifg=blue
@@ -147,15 +150,8 @@ let g:airline_theme='wombat'
 
 " prevent to open the preview window on autocomplete
 set completeopt=menu
-autocmd BufWritePre *.py execute ':Black'
 
 autocmd VimResized * :wincmd =
-
-let g:prettier#exec_cmd_async = 0
-let g:prettier#autoformat = 0
-let g:prettier#quickfix_enabled = 0
-autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx Prettier
-
 
 let g:scratch_persistence_file="~/.vim-scratch"
 
@@ -181,8 +177,8 @@ nnoremap <C-W><C-V>[ :exec "vert norm <C-V><C-W>["<CR>
 
 
 " coc.nvim
-highlight CocFloating ctermbg=2
-highlight CocErrorFloat ctermfg=11
+" highlight CocFloating ctermbg=2
+" highlight CocErrorFloat ctermfg=11
 
 " Use tab for trigger completion with characters ahead and navigate.
 inoremap <silent><expr> <TAB>

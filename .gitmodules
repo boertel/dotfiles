@@ -46,18 +46,12 @@
 [submodule "vim/pack/boertel/start/vim-stylus.git"]
 	path = vim/pack/boertel/start/vim-stylus.git
 	url = git@github.com:wavded/vim-stylus.git
-[submodule "vim/pack/boertel/start/vim-prettier"]
-	path = vim/pack/boertel/start/vim-prettier
-	url = git@github.com:prettier/vim-prettier
 [submodule "vim/pack/boertel/start/vim-commentary.git"]
 	path = vim/pack/boertel/start/vim-commentary.git
 	url = git@github.com:tpope/vim-commentary.git
 [submodule "vim/pack/boertel/start/ultisnips"]
 	path = vim/pack/boertel/start/ultisnips
 	url = git@github.com:sirver/ultisnips
-[submodule "vim/pack/boertel/start/black"]
-	path = vim/pack/boertel/start/black
-	url = git@github.com:ambv/black
 [submodule "vim/pack/boertel/start/vim-mkdir"]
 	path = vim/pack/boertel/start/vim-mkdir
 	url = git@github.com:pbrisbin/vim-mkdir
@@ -106,3 +100,6 @@
 [submodule "vim/pack/boertel/start/vim-prisma"]
 	path = vim/pack/boertel/start/vim-prisma
 	url = git@github.com:pantharshit00/vim-prisma
+[submodule "vim/pack/boertel/start/python-syntax"]
+	path = vim/pack/boertel/start/python-syntax
+	url = git@github.com:vim-python/python-syntax.git

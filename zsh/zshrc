@@ -55,7 +55,7 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 # python
 eval "$(pyenv init -)"
-export PATH="$HOME/.poetry/bin:$PATH"
+#export PATH="$HOME/.poetry/bin:$PATH"
 
 # postgres with https://github.com/petere/homebrew-postgresql
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
@@ -66,7 +66,7 @@ export PATH=$PATH:$HOME/Code/gocode/bin
 ctags=/usr/local/bin/ctags
 
 # ruby
-export PATH="/opt/homebrew/opt/ruby/bin:$HOME/.gem/ruby/2.6.0/bin:$PATH"
+export PATH="/opt/homebrew/opt/ruby/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH"
 
 # fzf fuzzy finder file
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

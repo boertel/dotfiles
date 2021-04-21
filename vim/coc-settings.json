@@ -1,0 +1,4 @@
+{
+  "tailwindCSS.headwind.runOnSave": false,
+  "coc.preferences.formatOnSaveFiletypes": ["css", "markdown", "javascript", "typescriptreact"]
+}
