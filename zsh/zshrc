@@ -1,6 +1,6 @@
 eval "$(starship init zsh)"
 
-for file in ~/.{functions,aliases,prompt,variables,bash_private}; do
+for file in ~/.{functions,aliases,prompt,variables,bash_private,zsh_private}; do
     [ -r "$file" ] && [ -f "$file" ] && source $file
 done
 
@@ -95,3 +95,5 @@ export GPG_TTY=$(tty)
 
 [[ -s "/Users/ben/Code/vasy/vasy-function" ]] && source /Users/ben/Code/vasy/vasy-function
 export PATH="$PATH:$HOME/Code/dotfiles/bin"
+
+export PATH="$HOME/.poetry/bin:$PATH"

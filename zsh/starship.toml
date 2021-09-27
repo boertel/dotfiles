@@ -38,3 +38,6 @@ format = 'via [${symbol}${pyenv_prefix}(${version} )($virtualenv)]($style)'
 full_symbol = "🔋"
 charging_symbol = "⚡️"
 discharging_symbol = "💀 "
+
+[gcloud]
+disabled = true
