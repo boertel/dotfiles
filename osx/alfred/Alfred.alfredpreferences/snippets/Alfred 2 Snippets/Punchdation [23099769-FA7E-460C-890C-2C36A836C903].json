@@ -1,9 +1,0 @@
-{
-  "alfredsnippet" : {
-    "snippet" : "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title><\/title>\n    <link rel=\"stylesheet\" href=\"\/\/s3.amazonaws.com\/punchtab-static\/zzzzzz\/css\/punchdation.5.css\">\n<\/head>\n<body>\n\n<script src=\"\/\/s3.amazonaws.com\/punchtab-static\/zzzzzz\/js\/punchdation.5.js\"><\/script>\n\n<script>\n$(document).ready(function () {\n    $(document).foundation()\n});\n<\/script>\n\n<\/body>\n<\/html>",
-    "dontautoexpand" : true,
-    "uid" : "23099769-FA7E-460C-890C-2C36A836C903",
-    "name" : "Punchdation",
-    "keyword" : "punchdation"
-  }
-}
