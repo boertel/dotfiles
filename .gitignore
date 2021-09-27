@@ -10,3 +10,5 @@ vim/black/
 vim/tmp/
 
 zsh/.zcompdump
+
+osx/alfred/Alfred.alfredpreferences/snippets/private/
