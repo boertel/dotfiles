@@ -25,18 +25,19 @@ alias ieconfig='ifconfig en0'
 alias mac='ifconfig en0 | grep ether | cut -d " " -f 2'
 alias reload='source ~/.zshrc'
 alias hour='echo -e "local:\t`date '+%H:%M:%S'`\nUTC:\t`date -u '+%H:%M:%S'`"'
-alias cleanvim='rm ~/.vim/tmp/*'
+alias cleanvim='trash ~/.vim/tmp/*'
 alias hk=heroku
 alias hkpm="heroku run python manage.py"
 alias hk_dburl="heroku config:get DATABASE_URL -a"
 alias tf='terraform'
 alias ghist='history | grep'
+alias rw=railway
 
 alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
 
 alias ngr='ngrok http -subdomain=boertel'
 
-alias gg='git grep'
+alias gg='git grep -n'
 
 
 alias jsonify='python -mjson.tool'

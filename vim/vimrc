@@ -13,6 +13,7 @@ let g:gitgutter_eager = 0
 let g:vim_json_syntax_conceal = 0
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+let g:ctrlp_root_markers = ['package.json']
 
 map <Leader>j !python -m json.tool
 
@@ -51,6 +52,7 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 " set iskeyword-=-
 
 let g:netrw_list_hide='\.pyc$,\.DS_Store$,__pycache__/$,\.ropeproject/$'
+let g:netrw_banner = 0
 set wildignore=*.pyc
 
 " disable middle click
