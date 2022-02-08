@@ -83,6 +83,7 @@ nmap <silent> t<C-s> :TestSuite<CR>
 nmap <silent> t<C-l> :TestLast<CR>
 nmap <silent> t<C-g> :TestVisit<CR>
 
+
 let mapleader = ","
 cnoreabbrev W w
 cnoreabbrev E e
@@ -90,11 +91,14 @@ cnoreabbrev Wq wq
 cnoreabbrev vpslit vsplit
 
 " abbreviation <insert> mode
-iabbrev onsole cosnole
+iabbrev onsole console
 iabbrev cosnole console
 iabbrev consoel console
+iabbrev cosnoel console
+iabbrev lgo log
 iabbrev vehicule vehicle
 iabbrev Vehicule Vehicle
+iabbrev reutrn return
 
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
