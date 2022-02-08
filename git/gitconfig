@@ -2,6 +2,7 @@
     path = .gitconfig.local
 [core]
     editor = /usr/bin/vim
+	excludesfile = ~/.gitignore
 [color]
     diff = auto
     status = auto
@@ -15,6 +16,9 @@
     ci = commit -m
     diffc = diff --cached
     dif = diff
+    ph = push
+    pl = pull
+    d = diff
     br = branch --sort=-committerdate --verbose --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) : %(color:yellow)%(refname:short)%(color:reset) : %(contents:subject) : %(color:green)(%(committerdate:relative))%(color:reset) %(color:blue)<%(authorname)>%(color:reset)'
     co = checkout
     lgc = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t %s %C(yellow)%d%Creset' --abbrev-commit
@@ -27,7 +31,7 @@
     oops = commit --amend --no-edit
 
 [push]
-    default = current
+	default = current
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -36,8 +40,18 @@
 [user]
 	name = boertel
 	email = ben@comediadesign.com
+    signingKey = 159767EFDAC54FD16ADE17C1E0EE7A92D944EAF2
 [gite]
     brew = $HOME/Code/homebrew-tap/
 [iam]
-    me = benjamin.oertel@gmail.com
-    work = ben@comediadesign.com
+    me = benjamin.oertel@gmail.com:1123EBD9F58C8A08F644141D3BAB2C0F7E98F784
+    work = ben@comediadesign.com:159767EFDAC54FD16ADE17C1E0EE7A92D944EAF2
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = false
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+	templatedir = /Users/ben/.git-templates/

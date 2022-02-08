@@ -103,3 +103,6 @@
 [submodule "vim/pack/boertel/start/python-syntax"]
 	path = vim/pack/boertel/start/python-syntax
 	url = git@github.com:vim-python/python-syntax.git
+[submodule "vim/pack/boertel/start/vim-visual-multi"]
+	path = vim/pack/boertel/start/vim-visual-multi
+	url = git@github.com:mg979/vim-visual-multi.git
