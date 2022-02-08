@@ -1,3 +1,4 @@
+
 eval "$(starship init zsh)"
 
 for file in ~/.{functions,aliases,prompt,variables,bash_private,zsh_private}; do
@@ -61,9 +62,9 @@ eval "$(pyenv init -)"
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 
 # go
-export GOPATH=$GOPATH:$HOME/Code/gocode
+export GOPATH=$HOME/Code/gocode
 export PATH=$PATH:$HOME/Code/gocode/bin
-ctags=/usr/local/bin/ctags
+#ctags=/usr/local/bin/ctags
 
 # ruby
 export PATH="/opt/homebrew/opt/ruby/bin:$HOME/.gem/ruby/3.0.0/bin:$PATH"
@@ -74,9 +75,14 @@ export FZF_DEFAULT_OPS="--extended"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-
 # auto completion
 fpath=(~/Code/dotfiles/zsh/functions $fpath)
+
+if type brew &>/dev/null
+then
+    fpath=("$(brew --prefix)/share/zsh/site-functions" $fpath)
+fi
+
 autoload -Uz compinit && compinit
 
 # git
@@ -93,7 +99,8 @@ autoload -Uz compinit && compinit
 export GPG_TTY=$(tty)
 
 
-[[ -s "/Users/ben/Code/vasy/vasy-function" ]] && source /Users/ben/Code/vasy/vasy-function
 export PATH="$PATH:$HOME/Code/dotfiles/bin"
 
 export PATH="$HOME/.poetry/bin:$PATH"
+
+[ -f "/opt/homebrew/opt/vasy/lib/vasy.sh" ] && source "/opt/homebrew/opt/vasy/lib/vasy.sh" ]
