@@ -11,6 +11,7 @@
 [color "status"]
     untracked = cyan
 [alias]
+    fix = "!f() { git add -u && git commit -m \"$1\" && git push; }; f"
     shame = blame
     st = status -s
     ci = commit -m
@@ -19,6 +20,7 @@
     ph = push
     pl = pull
     d = diff
+    dc = diff -c
     br = branch --sort=-committerdate --verbose --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) : %(color:yellow)%(refname:short)%(color:reset) : %(contents:subject) : %(color:green)(%(committerdate:relative))%(color:reset) %(color:blue)<%(authorname)>%(color:reset)'
     co = checkout
     lgc = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t %s %C(yellow)%d%Creset' --abbrev-commit
@@ -32,6 +34,7 @@
 
 [push]
 	default = current
+	autoSetupRemote = true
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
