@@ -6,7 +6,9 @@ alias la='ls -a'
 alias lla='ls -la'
 alias rm='rm -i'
 alias utc='date -u'
+#alias cal='gcal --starting-day=1'
 alias week='date -%V'
+
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -32,6 +34,7 @@ alias hk_dburl="heroku config:get DATABASE_URL -a"
 alias tf='terraform'
 alias ghist='history | grep'
 alias rw=railway
+alias c=code
 
 alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
 

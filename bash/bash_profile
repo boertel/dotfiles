@@ -8,6 +8,8 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 export EDITOR=vi
 export GEDITOR=mvim
 
+export LC_ALL=en_US.UTF-8
+
 # Python
 export PYTHONSTARTUP=~/.pythonstartup
 
@@ -44,6 +46,7 @@ PATH=$PATH:$HOME/Code/gocode/bin
 PATH=$PATH:/usr/local/bin/google-cloud-sdk/bin
 PATH=$PATH:$HOME/Code/on-wifi/actions
 PATH=$PATH:$HOME/Library/Python/2.7/bin
+PATH=$HOME/.local/bin:$PATH
 export PATH
 
 ### Added by the Heroku Toolbelt
@@ -74,7 +77,6 @@ if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-export PATH="$HOME/.poetry/bin:$PATH"
 ctags=/usr/local/bin/ctags
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -107,4 +109,4 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # JINA_CLI_END
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-source "$HOME/.cargo/env"
+. "$HOME/.cargo/env"

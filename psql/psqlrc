@@ -5,7 +5,7 @@
 
 -- \set PROMPT1 '%[%033[1m%]%M %/%R%[%033[0m%]%# '
 
-\timing
+-- \timing
 
 -- By default, NULL displays as an empty space. Is it actually an empty
 -- string, or is it null? This makes that distinction visible.

@@ -48,7 +48,7 @@ update() {
         REPO_NAME=$1
         REPO_PATH="$GITROOT/$PACK_PATH/$REPO_NAME"
         cd "$REPO_PATH" && git pull
-        cd "$REPO_PATH" && git tag
+        cd "$REPO_PATH" && git tag --sort v:refname
         echo "choose tag [<enter> to keep current HEAD]"
         read -r TAG
         if [[ -z "$TAG" ]]; then

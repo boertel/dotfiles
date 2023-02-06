@@ -61,9 +61,9 @@ function trash {
 
 function server {
     if [[ "$2" == "-s" ]];then
-        python -m SimpleHTTPServer $1 > /dev/null 2>&1
+        python3 -m http.server $1 > /dev/null 2>&1
     else
-        python -m SimpleHTTPServer $1
+        python3 -m http.server $1
     fi
 }
 
@@ -102,7 +102,7 @@ function v {
         if git rev-parse --git-dir > /dev/null 2>&1; then
             VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
             if [[ $# -gt 0 ]]; then
-                CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent \"$@\""
+                CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent '$@'"
             else
                 CMD="mvim $SET_PWD $VIMSERVER"
             fi
@@ -120,4 +120,10 @@ function hk_pgrestore {
     DUMP_FILE="$1"
     DATABASE_NAME="$2"
     createdb "$DATABASE_NAME" && pg_restore --verbose --clean --no-acl --no-owner -h localhost -U ben -d "$DATABASE_NAME" "$DUMP_FILE"
+}
+
+function notify {
+    TEXT="$1"
+    TITLE="$2"
+    osascript -e "display notification \"$TEXT\" with title \"$TITLE\""
 }

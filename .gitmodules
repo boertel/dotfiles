@@ -49,9 +49,6 @@
 [submodule "vim/pack/boertel/start/vim-commentary.git"]
 	path = vim/pack/boertel/start/vim-commentary.git
 	url = git@github.com:tpope/vim-commentary.git
-[submodule "vim/pack/boertel/start/ultisnips"]
-	path = vim/pack/boertel/start/ultisnips
-	url = git@github.com:sirver/ultisnips
 [submodule "vim/pack/boertel/start/vim-mkdir"]
 	path = vim/pack/boertel/start/vim-mkdir
 	url = git@github.com:pbrisbin/vim-mkdir
@@ -85,9 +82,6 @@
 [submodule "vim/pack/boertel/start/vim-test"]
 	path = vim/pack/boertel/start/vim-test
 	url = git@github.com:vim-test/vim-test
-[submodule "vim/pack/boertel/start/vim-isort"]
-	path = vim/pack/boertel/start/vim-isort
-	url = git@github.com:fisadev/vim-isort
 [submodule "vim/pack/boertel/start/vim-terraform"]
 	path = vim/pack/boertel/start/vim-terraform
 	url = git@github.com:hashivim/vim-terraform
