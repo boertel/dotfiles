@@ -3,14 +3,31 @@ filetype off
 
 set runtimepath=$HOME/Code/dotfiles/vim,$VIMRUNTIME
 
-filetype plugin indent on
+call plug#begin()
+    Plug 'airblade/vim-gitgutter'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'ap/vim-css-color'
+    Plug 'junegunn/vim-peekaboo'
+    Plug 'kien/ctrlp.vim'
+    Plug 'kien/rainbow_parentheses.vim'
+    Plug 'mg979/vim-visual-multi'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'pbrisbin/vim-mkdir'
+    Plug 'prisma/vim-prisma'
+    Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-commentary'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+call plug#end()
+
+colorscheme wombat
+
+" automatically done by plug#end()
+"filetype plugin indent on
 
 set shell=bash\ --login
-
-let g:gitgutter_sign_column_always = 1
-let g:gitgutter_eager = 0
-
-let g:vim_json_syntax_conceal = 0
 
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 let g:ctrlp_root_markers = ['package.json']
@@ -18,7 +35,6 @@ let g:ctrlp_root_markers = ['package.json']
 map <Leader>j !python -m json.tool
 
 
-colorscheme wombat
 set go-=T
 
 set splitright
@@ -51,6 +67,10 @@ set foldlevel=2
 set backspace=indent,eol,start  " backspace through everything in insert mode
 " set iskeyword-=-
 
+" show line number and relative line number on command mode
+set relativenumber
+set number
+
 let g:netrw_list_hide='\.pyc$,\.DS_Store$,__pycache__/$,\.ropeproject/$'
 let g:netrw_banner = 0
 set wildignore=*.pyc
@@ -79,20 +99,6 @@ function! CheckBackspace() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1):
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
 
 " vim-test
 " these "Ctrl mappings" work well when Caps Lock is mapped to Ctrl
@@ -119,8 +125,13 @@ iabbrev vehicule vehicle
 iabbrev Vehicule Vehicle
 iabbrev reutrn return
 
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+ab pdb __import__("pdb").set_trace()
+ab ipdb __import__("ipdb").set_trace()
+ab clog console.log(
+ab dbg debugger;
+ab dcy cy.get('[data-cy=
+
+
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
@@ -136,37 +147,35 @@ au InsertLeave * match ExtraWhiteSpace /\s\+$/
 " define pwd to be current file folder
 " autocmd BufEnter * silent! lcd %:p:h
 
-autocmd BufNewFile,BufRead *.less set filetype=less
-autocmd BufNewFile,BufRead *.json set filetype=javascript
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+"autocmd BufNewFile,BufRead *.less set filetype=less
+"autocmd BufNewFile,BufRead *.json set filetype=javascript
+"autocmd BufNewFile,BufRead *.md set filetype=markdown
 
-" Use formatprg when available
-let g:neoformat_try_formatprg = 1
-
-" show line number and relative line number on command mode
-set relativenumber
-set number
 
 if has("gui_running")
     set guifont=M+_1m_light:h16
 endif
+
+" gitgutter
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_set_sign_backgrounds = 1
+let g:gitgutter_eager = 0
+highlight SignColumn guibg=#000000
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " python line length
 autocmd FileType python,javascript setlocal colorcolumn=80
 hi ColorColumn ctermbg=lightgrey guibg=#474747
 let g:python_highlight_all = 1
 
+" customize highlighted search result colors
 hi SpellBad term=underline gui=undercurl guisp=Orange
 hi MatchParen guibg=#b77fdb guifg=blue
 hi Search guibg=#85C6EC guifg=#FFFFFF
 set hlsearch
 nnoremap <esc><esc> :silent! nohls<cr>
-
-ab pdb __import__("pdb").set_trace()
-ab ipdb __import__("ipdb").set_trace()
-ab clog console.log(
-ab dbg debugger;
-ab dcy cy.get('[data-cy=
 
 " vim-airline
 set laststatus=2
@@ -186,11 +195,10 @@ if has('gui_vimr')
     source ~/.config/nvim/ginit.vim
 endif
 
-au VimEnter * RainbowParenthesesToggle
-
 " browser to use when `gx`
 let g:netrw_browser_viewer = 'open'
 
+" https://github.com/MaxMEllon/vim-jsx-pretty
 let g:vim_jsx_pretty_colorful_config = 1
 
 hi jsxAttrib guifg=#8ac6f2 gui=none
@@ -204,9 +212,19 @@ nnoremap <C-W><C-V>[ :exec "vert norm <C-V><C-W>["<CR>
 
 
 " coc.nvim
-" highlight CocFloating ctermbg=2
-" highlight CocErrorFloat ctermfg=11
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1):
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
