@@ -94,19 +94,8 @@ fi
 
 autoload -Uz compinit && compinit
 
-# git
-# zstyle ':completion:*:*:git:*' script ~/Code/dotfiles/zsh/functions/git-completion.zsh
-
-# Debug autocompletion
-# zstyle ':completion:*' verbose yes
-# zstyle ':completion:*:descriptions' format '%B%d%b'
-# zstyle ':completion:*:messages' format '%d'
-# zstyle ':completion:*:warnings' format 'No matches for: %d'
-# zstyle ':completion:*' group-name ""
-
 # gpg passphrase
 export GPG_TTY=$(tty)
-
 
 export PATH="$PATH:$HOME/Code/dotfiles/bin"
 
@@ -121,3 +110,7 @@ export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
 export PNPM_HOME="/Users/ben/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# java
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
+# /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
