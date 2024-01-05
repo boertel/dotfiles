@@ -5,11 +5,13 @@ set runtimepath=$HOME/Code/dotfiles/vim,$VIMRUNTIME
 
 call plug#begin()
     Plug 'airblade/vim-gitgutter'
+    Plug 'editorconfig/editorconfig-vim'
+    Plug 'github/copilot.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'ap/vim-css-color'
     Plug 'junegunn/vim-peekaboo'
     Plug 'kien/ctrlp.vim'
-    Plug 'kien/rainbow_parentheses.vim'
+    " Plug 'kien/rainbow_parentheses.vim'
     Plug 'mg979/vim-visual-multi'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'pbrisbin/vim-mkdir'
@@ -20,6 +22,7 @@ call plug#begin()
     Plug 'tpope/vim-surround'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
+    Plug 'wuelnerdotexe/vim-astro'
 call plug#end()
 
 colorscheme wombat
@@ -131,6 +134,9 @@ ab clog console.log(
 ab dbg debugger;
 ab dcy cy.get('[data-cy=
 
+" remix
+iabbrev loader@ import type { LoaderFunctionArgs } from @remix-run/node;<CR>export async function loader({ request }: LoaderFunctionArgs) {<CR> return null;<CR>}<CR><CR>
+
 
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType yml setlocal ts=2 sts=2 sw=2 expandtab
@@ -138,7 +144,7 @@ autocmd FileType scss setlocal ts=2 sts=2 sw=2 expandtab
 autocmd FileType javascript setlocal ts=2 sts=2 sw=2 expandtab
 
 " highlight and clean up whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
+hi! link ExtraWhitespace WarningMsg
 au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
@@ -173,7 +179,7 @@ let g:python_highlight_all = 1
 " customize highlighted search result colors
 hi SpellBad term=underline gui=undercurl guisp=Orange
 hi MatchParen guibg=#b77fdb guifg=blue
-hi Search guibg=#85C6EC guifg=#FFFFFF
+hi Search guibg=#eae788 guifg=#242424
 set hlsearch
 nnoremap <esc><esc> :silent! nohls<cr>
 
@@ -221,14 +227,18 @@ inoremap <silent><expr> <TAB>
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-" <C-g>u breaks current undo, please make your own choice.
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" Use <c-space> to trigger completion
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+" nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gd :call CocAction('jumpDefinition', 'vsplit')<CR>
+" nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gy :call CocAction('jumpTypeDefinition', 'vsplit')<CR>
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
