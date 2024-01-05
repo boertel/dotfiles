@@ -42,7 +42,7 @@ hi SpellCap ctermfg=196 ctermbg=234 cterm=bold guifg=#e3e0d7 guibg=#3a3a3a gui=b
 if version >= 700
     hi CursorLine guibg=#2d2d2d
     hi CursorColumn guibg=#2d2d2d
-    hi MatchParen ctermfg=228 ctermbg=101 cterm=bold guifg=#eae788 guibg=#857b6f gui=bold
+    hi MatchParen ctermfg=228 ctermbg=101 cterm=none guifg=#857b6f guibg=#f4d179 gui=none
     hi Pmenu ctermfg=230 ctermbg=238 guifg=#ffffd7 guibg=#444444
     hi PmenuSel ctermfg=232 ctermbg=192 guifg=#242424 guibg=#cae982
 endif
