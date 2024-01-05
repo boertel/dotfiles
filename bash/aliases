@@ -34,7 +34,6 @@ alias hk_dburl="heroku config:get DATABASE_URL -a"
 alias tf='terraform'
 alias ghist='history | grep'
 alias rw=railway
-alias c=code
 
 alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
 

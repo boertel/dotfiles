@@ -89,6 +89,20 @@ function resetdb {
     dropdb $1 && createdb $1
 }
 
+function copydb {
+    # Check if two arguments are provided
+    if [ "$#" -ne 2 ]; then
+        echo "Usage: $0 source_database destination_database"
+        exit 1
+    fi
+
+    SOURCE_DB=$1
+    DEST_DB=$2
+
+    createdb $DEST_DB -T $SOURCE_DB
+}
+
+
 function gravatar {
     HASH_EMAIL=$(md5 -q -s "$1")
     echo "https://secure.gravatar.com/avatar/$HASH_EMAIL?size=$2"
@@ -114,6 +128,22 @@ function v {
     else
         $GUI_EDITOR $@
     fi
+}
+
+# smarter code
+function c {
+    if git rev-parse --git-dir > /dev/null 2>&1; then
+        FOLDER="$(git rev-parse --show-toplevel)"
+        if [[ $# -gt 0 ]]; then
+            CMD="code $FOLDER $@"
+        else
+            CMD="code $FOLDER"
+        fi
+    else
+        CMD="code . $@"
+    fi
+    echo $CMD
+    eval $CMD
 }
 
 function hk_pgrestore {
