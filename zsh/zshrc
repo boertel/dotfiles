@@ -1,13 +1,24 @@
 
 eval "$(starship init zsh)"
 
-for file in ~/.{functions,aliases,prompt,variables,bash_private,zsh_private}; do
+function set_win_title(){
+    echo -ne "\033]0; $(basename "$PWD") \007"
+}
+precmd_functions+=(set_win_title)
+
+
+for file in ~/.{functions,aliases,prompt,variables,bash_private,zsh_private,profile}; do
     [ -r "$file" ] && [ -f "$file" ] && source $file
 done
 
 # define alt+[arrows] to behave like bash
 bindkey "^[b" backward-word
 bindkey "^[f" forward-word
+
+# for alacritty
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
+
 
 
 # Look up history with ctrl+R
@@ -62,8 +73,7 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 eval "$(pyenv init -)"
 
 # postgres with https://github.com/petere/homebrew-postgresql
-# export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
-export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
 # go
 export GOPATH=$HOME/Code/gocode
@@ -102,9 +112,6 @@ export PATH="$PATH:$HOME/Code/dotfiles/bin"
 export PATH="$HOME/.local/bin:$PATH"
 
 [ -f "/opt/homebrew/opt/vasy/lib/vasy.sh" ] && source "/opt/homebrew/opt/vasy/lib/vasy.sh" ]
-export PATH="/opt/homebrew/opt/postgresql@13/bin:$PATH"
-
-
 
 # pnpm
 export PNPM_HOME="/Users/ben/Library/pnpm"
@@ -112,5 +119,7 @@ export PATH="$PNPM_HOME:$PATH"
 # pnpm end
 
 # java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
-# /Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home
+# export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home"
+
+[[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"

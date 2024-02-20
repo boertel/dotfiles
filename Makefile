@@ -71,3 +71,7 @@ install-node:
 install-python:
 	rm -rf ~/.pyenv
 	./python/install.sh
+
+install-alacritty:
+	rm -rf ~/.config/alacritty
+	ln -s `pwd`/alacritty	~/.config/alacritty
