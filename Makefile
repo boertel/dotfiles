@@ -36,7 +36,6 @@ install-bash-extra:
 
 install-nvim:
 	rm -rf ~/.config/nvim
-	mkdir -p ~/.config/nvim
 	ln -s `pwd`/nvim ~/.config/nvim
 
 install-vim:
@@ -74,4 +73,4 @@ install-python:
 
 install-alacritty:
 	rm -rf ~/.config/alacritty
-	ln -s `pwd`/alacritty	~/.config/alacritty
+	ln -s `pwd`/alacritty ~/.config/alacritty
