@@ -63,6 +63,10 @@ install-psql:
 	rm -rf ~/.psqlrc
 	ln -s `pwd`/psql/psqlrc ~/.psqlrc
 
+install-sqlite:
+	rm -rf ~/.sqliterc
+	ln -s `pwd`/sqlite/sqliterc ~/.sqliterc
+
 install-node:
 	rm -rf ~/.nvm
 	./node/install.sh
