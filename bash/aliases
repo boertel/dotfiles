@@ -8,6 +8,7 @@ alias rm='rm -i'
 alias utc='date -u'
 #alias cal='gcal --starting-day=1'
 alias week='date -%V'
+alias tdlr='tldr'
 
 
 alias ..='cd ..'
@@ -35,11 +36,15 @@ alias tf='terraform'
 alias ghist='history | grep'
 alias rw=railway
 
+alias pnpx="pnpm exec"
+
 alias fix-spotlight='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
 
 alias ngr='ngrok http -subdomain=boertel'
 
 alias gg='git grep -n'
+
+alias sqlite='sqlite3'
 
 
 alias jsonify='python -mjson.tool'
@@ -52,6 +57,8 @@ if [[ "$VIM" == "vim" ]]; then
 else
     alias vi='nvim'
 fi
+
+alias vi='nvim'
 
 
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'

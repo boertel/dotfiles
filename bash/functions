@@ -1,159 +1,156 @@
 #!/bin/bash
 
-
 function mkpdir {
-    mkdir $1; touch $1/__init__.py
+	mkdir $1
+	touch $1/__init__.py
 }
 
-function todo () {
-    echo "- [ ] $1" >> TODO.md
+function todo() {
+	echo "- [ ] $1" >>TODO.md
 }
 
 # instead of doing a rm, just move the files to .Trash
 function trash {
-    local trash_history="$HOME/.trash_history"
-    local to_remove
+	local trash_history="$HOME/.trash_history"
+	local to_remove
 
-    # clean up trash_history
-    local MAX=100
-    if [[ $(/bin/cat "$trash_history" | /usr/bin/wc -l) -gt $MAX ]]; then
-        echo "cleaning up $trash_history..."
-        sed -i -e "1,$MAX" "$trash_history"
-    fi
+	# clean up trash_history
+	local MAX=100
+	if [[ $(/bin/cat "$trash_history" | /usr/bin/wc -l) -gt $MAX ]]; then
+		echo "cleaning up $trash_history..."
+		sed -i -e "1,$MAX" "$trash_history"
+	fi
 
-    for to_remove in "$@"; do
-        # move back the last trash we ran
-        if [[ "$to_remove" == "--undo" || "$to_remove" == "-u" ]]; then
-            local last="$(tail -n 1 $trash_history)"
-            if [[ -z "$last" ]]; then
-                echo "nothing to undo"
-            else
-                local to_restore=$(echo "$last" | cut -d ":" -f 2)
-                local restoring_from=$(echo "$last" | cut -d ":" -f 3)
-                if [[ -e "$restoring_from" ]]; then
-                    if /bin/mv "$restoring_from" "$to_restore"; then
-                        sed -i '' -e '$ d' "$trash_history"
-                    fi
-                else
-                    echo "nothing to undo"
-                fi
-            fi
-            break
-        # ignore any other arguments
-        elif [[ "$to_remove" = -* ]]; then :
-        elif [[ -e "$to_remove" ]]; then
-            local dst=${to_remove##*/}
-            # append the time if necessary
-            while [ -e ~/.Trash/"$dst" ]; do
-                dst="$dst"_$(/bin/date +%H-%M-%S)
-            done
-            local trash_path="$HOME/.Trash/$dst"
-            if /bin/mv "$to_remove" "$trash_path"; then
-                local abs_to_remove="$(/opt/homebrew/bin/realpath "$to_remove")"
-                local now=$(/bin/date -u +"%Y-%m-%d")
-                echo "$now:$abs_to_remove:$trash_path" >> $trash_history
-            fi
-        else
-            echo "trash: $to_remove: No such file or directory"
-        fi
-    done
+	for to_remove in "$@"; do
+		# move back the last trash we ran
+		if [[ "$to_remove" == "--undo" || "$to_remove" == "-u" ]]; then
+			local last="$(tail -n 1 $trash_history)"
+			if [[ -z "$last" ]]; then
+				echo "nothing to undo"
+			else
+				local to_restore=$(echo "$last" | cut -d ":" -f 2)
+				local restoring_from=$(echo "$last" | cut -d ":" -f 3)
+				if [[ -e "$restoring_from" ]]; then
+					if /bin/mv "$restoring_from" "$to_restore"; then
+						sed -i '' -e '$ d' "$trash_history"
+					fi
+				else
+					echo "nothing to undo"
+				fi
+			fi
+			break
+		# ignore any other arguments
+		elif [[ "$to_remove" = -* ]]; then
+			:
+		elif [[ -e "$to_remove" ]]; then
+			local dst=${to_remove##*/}
+			# append the time if necessary
+			while [ -e ~/.Trash/"$dst" ]; do
+				dst="$dst"_$(/bin/date +%H-%M-%S)
+			done
+			local trash_path="$HOME/.Trash/$dst"
+			if /bin/mv "$to_remove" "$trash_path"; then
+				local abs_to_remove="$(/opt/homebrew/bin/realpath "$to_remove")"
+				local now=$(/bin/date -u +"%Y-%m-%d")
+				echo "$now:$abs_to_remove:$trash_path" >>$trash_history
+			fi
+		else
+			echo "trash: $to_remove: No such file or directory"
+		fi
+	done
 }
 
 function server {
-    if [[ "$2" == "-s" ]];then
-        python3 -m http.server $1 > /dev/null 2>&1
-    else
-        python3 -m http.server $1
-    fi
+	if [[ "$2" == "-s" ]]; then
+		python3 -m http.server $1 >/dev/null 2>&1
+	else
+		python3 -m http.server $1
+	fi
 }
 
 function gmatch {
-    mvim +/"$1" -p $(git grep -l "$1")
+	mvim +/"$1" -p $(git grep -l "$1")
 }
 
 [[ -s "$HOME/Code/vasy/vasy-function.sh" ]] && source $HOME/Code/vasy/vasy-function.sh
 [[ -s "$HOME/Code/vasy/vasy-completion.sh" ]] && source $HOME/Code/vasy/vasy-completion.sh
 
-
-
 function add-svg {
-    svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
+	svgr --template .svgr-template.js --tab-width 2 --no-dimensions $1
 }
 
-
 function gpretty {
-    git show --pretty --name-only HEAD | grep ".*\.js$" | xargs -L 1 prettier --write
+	git show --pretty --name-only HEAD | grep ".*\.js$" | xargs -L 1 prettier --write
 }
 
 function resetdb {
-    dropdb $1 && createdb $1
+	dropdb $1 && createdb $1
 }
 
 function copydb {
-    # Check if two arguments are provided
-    if [ "$#" -ne 2 ]; then
-        echo "Usage: $0 source_database destination_database"
-        exit 1
-    fi
+	# Check if two arguments are provided
+	if [ "$#" -ne 2 ]; then
+		echo "Usage: $0 source_database destination_database"
+		exit 1
+	fi
 
-    SOURCE_DB=$1
-    DEST_DB=$2
+	SOURCE_DB=$1
+	DEST_DB=$2
 
-    createdb $DEST_DB -T $SOURCE_DB
+	createdb $DEST_DB -T $SOURCE_DB
 }
 
-
 function gravatar {
-    HASH_EMAIL=$(md5 -q -s "$1")
-    echo "https://secure.gravatar.com/avatar/$HASH_EMAIL?size=$2"
+	HASH_EMAIL=$(md5 -q -s "$1")
+	echo "https://secure.gravatar.com/avatar/$HASH_EMAIL?size=$2"
 }
 
 # smarter macvim
 function v {
-    if [[ -z "$GUI_EDITOR" ]]; then
-        #SET_PWD="--cmd \"lcd $(pwd)\""
-        SET_PWD=""
-        if git rev-parse --git-dir > /dev/null 2>&1; then
-            VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
-            if [[ $# -gt 0 ]]; then
-                CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent '$@'"
-            else
-                CMD="mvim $SET_PWD $VIMSERVER"
-            fi
-        else
-            CMD="mvim $SET_PWD $@"
-        fi
-        echo $CMD
-        eval $CMD
-    else
-        $GUI_EDITOR $@
-    fi
+	if [[ -z "$GUI_EDITOR" ]]; then
+		#SET_PWD="--cmd \"lcd $(pwd)\""
+		SET_PWD=""
+		if git rev-parse --git-dir >/dev/null 2>&1; then
+			VIMSERVER="--servername $(basename $(git rev-parse --show-toplevel))"
+			if [[ $# -gt 0 ]]; then
+				CMD="mvim $SET_PWD $VIMSERVER --remote-tab-silent '$@'"
+			else
+				CMD="mvim $SET_PWD $VIMSERVER"
+			fi
+		else
+			CMD="mvim $SET_PWD $@"
+		fi
+		echo $CMD
+		eval $CMD
+	else
+		$GUI_EDITOR $@
+	fi
 }
 
 # smarter code
 function c {
-    if git rev-parse --git-dir > /dev/null 2>&1; then
-        FOLDER="$(git rev-parse --show-toplevel)"
-        if [[ $# -gt 0 ]]; then
-            CMD="code $FOLDER $@"
-        else
-            CMD="code $FOLDER"
-        fi
-    else
-        CMD="code . $@"
-    fi
-    echo $CMD
-    eval $CMD
+	if git rev-parse --git-dir >/dev/null 2>&1; then
+		FOLDER="$(git rev-parse --show-toplevel)"
+		if [[ $# -gt 0 ]]; then
+			CMD="code $FOLDER $@"
+		else
+			CMD="code $FOLDER"
+		fi
+	else
+		CMD="code . $@"
+	fi
+	echo $CMD
+	eval $CMD
 }
 
 function hk_pgrestore {
-    DUMP_FILE="$1"
-    DATABASE_NAME="$2"
-    createdb "$DATABASE_NAME" && pg_restore --verbose --clean --no-acl --no-owner -h localhost -U ben -d "$DATABASE_NAME" "$DUMP_FILE"
+	DUMP_FILE="$1"
+	DATABASE_NAME="$2"
+	createdb "$DATABASE_NAME" && pg_restore --verbose --clean --no-acl --no-owner -h localhost -U ben -d "$DATABASE_NAME" "$DUMP_FILE"
 }
 
 function notify {
-    TEXT="$1"
-    TITLE="$2"
-    osascript -e "display notification \"$TEXT\" with title \"$TITLE\""
+	TEXT="$1"
+	TITLE="$2"
+	osascript -e "display notification \"$TEXT\" with title \"$TITLE\""
 }

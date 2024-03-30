@@ -9,9 +9,8 @@ truncation_length = 8
 style = "cyan"
 
 [character]
-style_success = "green"
-style_failure = "red"
-symbol = "$"
+success_symbol = "[\\$](green)"
+error_symbol = "(red)"
 
 [git_branch]
 symbol = ""

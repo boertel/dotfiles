@@ -9,4 +9,5 @@ return {
   { "echasnovski/mini.pairs", enabled = false },
   { "neo-tree.nvim", enabled = false },
   { "lukas-reineke/headlines.nvim", enabled = false },
+  { "windwp/nvim-ts-autotag", enabled = false },
 }
