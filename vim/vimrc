@@ -253,4 +253,7 @@ nmap <leader>rn <Plug>(coc-rename)
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocActionAsync('format')
 
+" expand error message into multiline (for typescript)
+map <space>e :lua vim.diagnostic.open_float(0, {scope="line"})<CR>
+
 set secure

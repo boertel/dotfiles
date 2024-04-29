@@ -25,6 +25,13 @@ vim.cmd("iabbrev vehicule vehicle")
 vim.cmd("iabbrev Vehicule Vehicle")
 vim.cmd("iabbrev reutrn return")
 
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>e",
+  ':lua vim.diagnostic.open_float(0, {scope="line"})<CR>',
+  { noremap = true, silent = true }
+)
+
 -- -- Disable system clipboard and use Neovim clipboard
 vim.opt.clipboard = ""
 -- map({ "n", "x" }, "y", '"+y')
