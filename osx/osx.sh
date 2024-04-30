@@ -4,6 +4,7 @@ defaults write -g InitialKeyRepeat -int 10
 defaults write NSGlobalDomain KeyRepeat -int 0.02
 defaults write com.apple.dock no-glass -bool true
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
+defaults write com.apple.menuextra.clock IsAnalog -bool true
 
 # menu bar: hide TimeMachine, Volume, and User icons
 for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do

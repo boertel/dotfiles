@@ -36,6 +36,7 @@ install-bash-extra:
 
 install-nvim:
 	rm -rf ~/.config/nvim
+	mkdir -p ~/.config
 	ln -s `pwd`/nvim ~/.config/nvim
 
 install-vim:

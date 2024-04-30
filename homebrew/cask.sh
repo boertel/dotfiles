@@ -1,6 +1,6 @@
 brew install --cask macvim
 brew install --cask slack
-brew install --cask spectacle
+brew install --cask rectangle
 brew install --cask flux
 brew install --cask spotify
 brew install --cask firefox
@@ -32,3 +32,6 @@ brew install --cask appcleaner
 # brew install --cask anybar
 # brew install --cask kap
 # brew install --cask transmission
+
+brew tap homebrew/cask-fonts
+brew install --cask font-fira-code-nerd-font
