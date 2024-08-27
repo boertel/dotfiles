@@ -13,6 +13,7 @@
 [alias]
     fix = "!f() { git add -u && git commit -m \"$1\" && git push; }; f"
     shame = blame
+    sw = switch
     st = status -s
     ci = commit -m
     diffc = diff --cached
