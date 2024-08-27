@@ -40,3 +40,6 @@ discharging_symbol = "💀 "
 
 [gcloud]
 disabled = true
+
+[ruby]
+detect_variables = []
