@@ -1,4 +1,5 @@
 alias ls='ls'
+alias gti='git'
 alias ll='ls -l'
 alias l='ls'
 alias m='more'
