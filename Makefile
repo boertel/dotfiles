@@ -3,9 +3,8 @@ install: install-nvim install-bash install-zsh install-bash-extra\
 
 install-git:
 	rm -rf ~/.gitconfig ~/.git-templates ~/.gitattributes
-	ln -s `pwd`/git/gitconfig ~/.gitconfig
-	ln -s `pwd`/git/gitattributes ~/.gitattributes
-	ln -s `pwd`/git/git-templates ~/.git-templates
+	rm -rf ~/.config/git
+	ln -s `pwd`/git ~/.config/git
 	./git/install-git-completion
 
 install-hg:

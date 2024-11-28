@@ -2,7 +2,7 @@
     path = .gitconfig.local
 [core]
     editor = /usr/bin/vim
-	excludesfile = ~/.gitignore
+    excludesfile = ~/.config/git/ignore
 [color]
     diff = auto
     status = auto
@@ -34,28 +34,31 @@
     oops = commit --amend --no-edit
 
 [push]
-	default = current
-	autoSetupRemote = true
+    default = current
+    autoSetupRemote = true
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [user]
-	name = boertel
-	email = ben@comediadesign.com
+    name = boertel
+    email = ben@comediadesign.com
     signingKey = 159767EFDAC54FD16ADE17C1E0EE7A92D944EAF2
+[includeIf "gitdir:~/Work/**"]
+  path = ~/.config/git/work
+[includeIf "gitdir:~/Code/**"]
+  path = ~/.config/git/personal
 [gite]
     brew = $HOME/Code/homebrew-tap/
 [iam]
     me = benjamin.oertel@gmail.com:1123EBD9F58C8A08F644141D3BAB2C0F7E98F784
     work = ben@comediadesign.com:159767EFDAC54FD16ADE17C1E0EE7A92D944EAF2
 [gpg]
-	program = gpg
+    program = gpg
 [commit]
-	gpgsign = false
+    gpgsign = false
 [pull]
-	ff = only
+    ff = only
 [init]
-	defaultBranch = main
-	templatedir = /Users/ben/.git-templates/
+    defaultBranch = main
