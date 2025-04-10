@@ -29,9 +29,13 @@ install-zsh:
 install-bash-extra:
 	rm -rf ~/.ackrc ~/.aliases ~/.functions ~/.tmux.conf
 	ln -s `pwd`/bash/ackrc ~/.ackrc
-	ln -s `pwd`/bash/tmux.conf ~/.tmux.conf
 	ln -s `pwd`/bash/aliases ~/.aliases
 	ln -s `pwd`/bash/functions ~/.functions
+
+install-tmux:
+	rm -rf ~/.tmux.conf ~/.config/tmux
+	ln -s `pwd`/bash/tmux.conf ~/.tmux.conf
+	ln -s `pwd`/tmux ~/.config/tmux
 
 install-nvim:
 	rm -rf ~/.config/nvim

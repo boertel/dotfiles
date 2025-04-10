@@ -2,8 +2,8 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
-      servers = {
-        svelte = {},
+      inlay_hints = {
+        enabled = false,
       },
     },
   },

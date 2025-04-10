@@ -24,8 +24,8 @@
     dc = diff -c
     br = branch --sort=-committerdate --verbose --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) : %(color:yellow)%(refname:short)%(color:reset) : %(contents:subject) : %(color:green)(%(committerdate:relative))%(color:reset) %(color:blue)<%(authorname)>%(color:reset)'
     co = checkout
-    lgc = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t %s %C(yellow)%d%Creset' --abbrev-commit
-    lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cD)%Creset %C(cyan)%an%Creset\t%s %C(yellow)%d%Creset' --abbrev-commit -n 5
+    lgc = log --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(cyan)%an%Creset\t %s %C(yellow)%d%Creset' --abbrev-commit
+    lg = log --pretty=format:'%Cred%h%Creset %Cgreen(%cd)%Creset %C(cyan)%an%Creset\t%s %C(yellow)%d%Creset  %Cgreen(%cr)%Creset' --abbrev-commit -n 5 --date=local 
     compare = hub --pr
     nuke = !sh -c 'git branch -d $1 && git push origin :$1' -
     code-changes = "!git log --format=format: --name-only | egrep -v '^$' | sort | uniq -c | sort -rg | head -10"

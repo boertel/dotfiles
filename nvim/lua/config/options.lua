@@ -2,4 +2,39 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
-vim.g.mapleader = ","
+vim.o.guifont = "Inconsolata Nerd Font Mono:h12:#e-subpixelantialias"
+
+-- Set the font size
+vim.g.netrw_list_hide = (vim.fn["netrw_gitignore#Hide"]()) .. [[,\(^\|\s\s\)\zs\.\S\+]]
+
+-- Use markdown for blog posts so copilot is more distracted than anything
+vim.g.copilot_filetypes = { markdown = false }
+
+vim.cmd("cnoreabbrev W w")
+vim.cmd("cnoreabbrev E e")
+vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev vpslit vsplit")
+vim.cmd("cnoreabbrev t tabnew")
+
+-- abbreviation <insert> mode
+vim.cmd("iabbrev onsole console")
+vim.cmd("iabbrev cosnole console")
+vim.cmd("iabbrev consoel console")
+vim.cmd("iabbrev cosnoel console")
+vim.cmd("iabbrev lgo log")
+vim.cmd("iabbrev vehicule vehicle")
+vim.cmd("iabbrev Vehicule Vehicle")
+vim.cmd("iabbrev reutrn return")
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<space>e",
+  ':lua vim.diagnostic.open_float(0, {scope="line"})<CR>',
+  { noremap = true, silent = true }
+)
+
+-- map({ "n", "x" }, "y", '"+y')
+-- map("n", "p", '""p')
+
+-- -- Disable system clipboard and use Neovim clipboard
+vim.opt.clipboard = ""
