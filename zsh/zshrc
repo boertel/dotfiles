@@ -124,9 +124,34 @@ esac
 
 # java
 # export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home"
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home"
+#export JAVA_HOME="/Library/Java/JavaVirtualMachines/temurin-21.jdk/Contents/Home"
 
 [[ "$TERM_PROGRAM" == "CodeEditApp_Terminal" ]] && . "/Applications/CodeEdit.app/Contents/Resources/codeedit_shell_integration.zsh"
 
 # homebrew
 export HOMEBREW_NO_AUTO_UPDATE=1
+
+# bun completions
+[ -s "/Users/ben/.bun/_bun" ] && source "/Users/ben/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# add d1 helper
+export PATH="$PATH:$HOME/Code/d1"
+
+# cloudflare tunnel help
+export PATH="$PATH:$HOME/Code/cf-tunnel"
+
+# php
+export PATH="/opt/homebrew/opt/php@7.2/bin:$PATH"
+export PATH="/opt/homebrew/opt/php@7.2/sbin:$PATH"
+export PATH="/opt/homebrew/opt/mysql@8.0/bin:$PATH"
+
+alias claude="/Users/ben/.claude/local/claude"
+export PATH="$HOME/.local/bin:$PATH"
+
+export ATUIN_SESSION=$(tmux display-message -p '#S:#I.#P' 2>/dev/null || echo "default")
+eval "$(atuin init zsh)"
+

@@ -67,6 +67,10 @@ install-psql:
 	rm -rf ~/.psqlrc
 	ln -s `pwd`/psql/psqlrc ~/.psqlrc
 
+install-atuin:
+	rm -rf ~/.config/atuin
+	ln -s `pwd`/atuin ~/.config/atuin
+
 install-sqlite:
 	rm -rf ~/.sqliterc
 	ln -s `pwd`/sqlite/sqliterc ~/.sqliterc
