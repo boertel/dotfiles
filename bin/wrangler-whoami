@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# wrangler-whoami personal | comedia
+
+DIR="$HOME/.wrangler/config"
+
+CONFIG_FILE="$DIR/default.toml"
+
+ACCOUNT="$1"
+
+DEST="${DIR}/accounts/${ACCOUNT}.toml"
+
+if [[ -f "$DEST" ]]; then
+  cp "$DEST" "$DIR/default.toml"
+else
+  echo "$DEST does not exist"
+  exit 1
+fi
